@@ -42,13 +42,15 @@ contains
             u_block(:)[im] = u(start_elem(im):end_elem(im))
             v_block(:)[im] = v(start_elem(im):end_elem(im))
             a_block[im] = dot_opts(u_block(:)[im],v_block(:)[im],option)
-            sync all
-            if (im == 1) then
-               a = 0.0_rk
-               do i = 1, nimg
-                  a = a + a_block[i]
-               end do
-            end if
+            call co_sum(a_block, result_image=1)
+            a = a_block[1]
+            ! sync all
+            ! if (im == 1) then
+            !    a = 0.0_rk
+            !    do i = 1, nimg
+            !       a = a + a_block[i]
+            !    end do
+            ! end if
          end block
 
 #endif
