@@ -35,7 +35,7 @@ contains
 
    !> author: Seyed Ali Ghasemi
    pure function md_2(u,v) result(a)
-      use external_interfaces
+      use external_interfaces_dot
       real(rk), dimension(:), intent(in), contiguous :: u, v
       real(rk)                                       :: a
 
