@@ -1,6 +1,6 @@
 module fordot_opts
 
-   use iso_fortran_env, only: ik => int32, rk => real64
+   use forkinds
 
    implicit none
 
@@ -24,8 +24,10 @@ contains
          a = dot_product(u,v)
        case ('m2')
          a = md_2(u,v)
-       case ('m3')
+      case ('m3')
          a = md_3(u,v)
+      case ('m4')
+         a = md_4(u,v)
        case default
          a = dot_product(u,v)
       end select
@@ -33,19 +35,11 @@ contains
 
    !> author: Seyed Ali Ghasemi
    pure function md_2(u,v) result(a)
+      use external_interfaces
       real(rk), dimension(:), intent(in), contiguous :: u, v
       real(rk)                                       :: a
 
-      interface
-         pure function ddot(f_n, f_dx, f_incx, f_dy, f_incy) result(f_a)
-            import rk
-            integer, intent(in) :: f_incx, f_incy, f_n
-            real(rk), intent(in) :: f_dx(f_n), f_dy(f_n)
-            real(rk) :: f_a
-         end function ddot
-      end interface
-
-      a = ddot(size(u),u,1,v,1)
+      a = dot(size(u),u,1,v,1)
    end function md_2
 
    !> author: Seyed Ali Ghasemi
@@ -54,9 +48,17 @@ contains
       real(rk) :: a
       integer :: i
 
+      a = 0.0_rk
       do i = 1, size(u)
          a = a + u(i)*v(i)
       end do
    end function md_3
+
+   !> author: Seyed Ali Ghasemi
+   pure function md_4(u,v) result(a)
+      real(rk), dimension(:), intent(in), contiguous :: u, v
+      real(rk) :: a
+      a = sum(u*v)
+   end function md_4
 
 end module fordot_opts

@@ -1,6 +1,6 @@
 module fordot
 
-   use iso_fortran_env, only: ik => int32, rk => real64
+   use forkinds
    use fordot_opts, only: dot_opts
 
    implicit none
@@ -10,9 +10,21 @@ module fordot
 
    interface dot_product
       procedure :: dot_R0R1R1_rel
+      procedure :: dot_R0R1R1_rel_default
    end interface
 
 contains
+
+   !> author: Seyed Ali Ghasemi
+   pure function dot_R0R1R1_rel_default(u,v,option) result(a)
+      real(rk),     intent(in), contiguous :: u(:)
+      real(rk),     intent(in), contiguous :: v(:)
+      character(*), intent(in)             :: option
+      real(rk)                             :: a
+      a = dot_opts(u, v, option)
+   end function dot_R0R1R1_rel_default
+
+
 
    !> author: Seyed Ali Ghasemi
 #if defined(USE_COARRAY)
@@ -23,7 +35,7 @@ contains
       real(rk),     intent(in), contiguous :: u(:)
       real(rk),     intent(in), contiguous :: v(:)
       character(*), intent(in)             :: method
-      character(*), intent(in), optional   :: option
+      character(*), intent(in)             :: option
       real(rk)                             :: a
 
       select case (method)
@@ -59,6 +71,8 @@ contains
       end select
 
    end function dot_R0R1R1_rel
+
+
 
    !> Calculate block sizes and ranges.
    !> author: Seyed Ali Ghasemi
