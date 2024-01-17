@@ -1,6 +1,6 @@
 module fordot
 
-   use forkinds
+   use kinds
    use fordot_opts, only: dot_opts
 
    implicit none
