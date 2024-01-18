@@ -6,8 +6,6 @@ author:              Seyed Ali Ghasemi
 email:               info@gha3mi.com
 github:              https://github.com/gha3mi
 src_dir:             ./src
-                     ./test
-                     ./example
 output_dir:          ./doc
 source:              true
 graph:               true
@@ -17,7 +15,5 @@ display:             public
                      private
                      protected
 print_creation_date: true
-favicon:             ./media/logo.png
-media_dir:           ./media
 
 {!README.md!}
