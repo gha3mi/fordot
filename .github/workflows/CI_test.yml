@@ -11,10 +11,10 @@ jobs:
       matrix:
         os: [ubuntu-latest, windows-latest]
         toolchain:
+          - {compiler: gcc}
+          - {compiler: intel}
           - {compiler: intel-classic}
-        exclude:
-          - os: windows-latest
-            toolchain: {compiler: intel-classic}
+          - {compiler: nvidia-hpc}
 
     steps:
     - name: Checkout code
@@ -23,9 +23,12 @@ jobs:
         submodules: recursive
 
     - name: Setup Fortran Package Manager (fpm)
-      uses: fortran-lang/setup-fpm@v5
+      uses: fortran-lang/setup-fpm@main
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Install LAPACK and BLAS
+      run: sudo apt-get install -y libblas-dev liblapack-dev
 
     - name: Setup Fortran Compiler
       uses: fortran-lang/setup-fortran@v1
@@ -34,12 +37,8 @@ jobs:
         compiler: ${{ matrix.toolchain.compiler }}
         version: ${{ matrix.toolchain.version }}
 
-    # - name: Run Tests
-    #   run: fpm test @${{ env.FC}}-test
-    #   env:
-    #     FC: ${{ steps.setup-fortran.outputs.fc }}
+    - name: Run Tests (Debug)
+      run: fpm test test1 --profile debug --compiler @${{env.FC}} --flag '-llapack -lblas'
 
-    # - name: Run Tests (USE_COARRAY)
-    #   run: fpm test @${{ env.FC}}-test-coarray
-    #   env:
-    #     FC: ${{ steps.setup-fortran.outputs.fc }}
+    - name: Run Tests (Release)
+      run: fpm test test1 --profile release --compiler @${{env.FC}} --flag '-llapack -lblas'
