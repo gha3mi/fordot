@@ -5,7 +5,7 @@
 [![Build](https://github.com/gha3mi/fordot/actions/workflows/CI_test.yml/badge.svg)](https://github.com/gha3mi/fordot/actions/workflows/CI_test.yml)
 
 
-**ForDot**: A Fortran library that overloads the `dot` function to enable efficient dot product with/without coarray.
+**ForDot**: A Fortran library that overloads the `dot_product` function to enable efficient dot product with/without coarray.
 
 ## Usage
 
