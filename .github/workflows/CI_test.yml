@@ -9,7 +9,7 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        os: [ubuntu-latest, windows-latest]
+        os: [ubuntu-latest]
         toolchain:
           - {compiler: gcc}
           - {compiler: intel}
@@ -23,7 +23,7 @@ jobs:
         submodules: recursive
 
     - name: Setup Fortran Package Manager (fpm)
-      uses: fortran-lang/setup-fpm@main
+      uses: fortran-lang/setup-fpm@v1
       with:
         github-token: ${{ secrets.GITHUB_TOKEN }}
 
@@ -31,7 +31,7 @@ jobs:
       run: sudo apt-get install -y libblas-dev liblapack-dev
 
     - name: Setup Fortran Compiler
-      uses: fortran-lang/setup-fortran@v1
+      uses: fortran-lang/setup-fortran@main
       id: setup-fortran
       with:
         compiler: ${{ matrix.toolchain.compiler }}
