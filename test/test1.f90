@@ -1,0 +1,38 @@
+program test_dot1
+
+   use kinds
+   use fordot
+   use forunittest
+
+   implicit none
+
+   real(rk), allocatable :: u(:), v(:)
+   real(rk)              :: a_ref, a
+   integer               :: m
+   type(unit_test)       :: ut
+
+   ! a = u(m).v(m)
+   m = 300
+
+   allocate(u(m),v(m))
+   call random_number(u)
+   call random_number(v)
+   u = u*100.0_rk
+   v = v*100.0_rk
+
+   a_ref = dot_product(u,v)
+
+   a = dot_product(u,v)
+   call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.1')
+
+   a = dot_product(u,v, option='m1')
+   call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.2')
+
+   a = dot_product(u,v, option='m2')
+   call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.3')
+
+   a = dot_product(u,v, option='m3')
+   call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.4')
+
+end program test_dot1
+
