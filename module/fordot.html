@@ -71,7 +71,7 @@
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title="46.6% of total for modules and submodules.">62 statements</a>
+                 title="45.8% of total for modules and submodules.">60 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
@@ -131,8 +131,8 @@
       </a>
       <div id="funcs-0" class="collapse">
         <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../module/fordot.html#proc-dot_r0r1r1_rel_default">dot_R0R1R1_rel_default</a>
             <a class="list-group-item" href="../module/fordot.html#proc-dot_r0r1r1_rel">dot_R0R1R1_rel</a>
+            <a class="list-group-item" href="../module/fordot.html#proc-dot_r0r1r1_rel_coarray">dot_R0R1R1_rel_coarray</a>
         </div>
       </div>
     </div>
@@ -170,8 +170,8 @@
         <ul class="list-group list-group-flush">
             <li class="list-group-item">
               <ul class="list-inline">
-                  <li class="list-inline-item">kinds</li>
                   <li class="list-inline-item"><a href='fordot_opts.html'>fordot_opts</a></li>
+                  <li class="list-inline-item">kinds</li>
               </ul>
             </li>
             <li class="list-group-item">
@@ -321,7 +321,7 @@ large graphs.</div>
     <ul class="list-group">
           <li class="list-group-item">
                 <h3>
-    private impure function <a href='../proc/dot_r0r1r1_rel.html'>dot_R0R1R1_rel</a>(u, v, method, option) result(a)  
+    private pure function <a href='../proc/dot_r0r1r1_rel.html'>dot_R0R1R1_rel</a>(u, v, option) result(a)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -343,7 +343,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-u~6"></span>
+              <span class="anchor" id="variable-u"></span>
               real(kind=rk),
             </td>
 <td>intent(in),</td>
@@ -358,7 +358,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-v~6"></span>
+              <span class="anchor" id="variable-v"></span>
               real(kind=rk),
             </td>
 <td>intent(in),</td>
@@ -373,22 +373,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-method"></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>method</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-option~3"></span>
+              <span class="anchor" id="variable-option"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -413,7 +398,7 @@ large graphs.</div>
           </li>
           <li class="list-group-item">
                 <h3>
-    private pure function <a href='../proc/dot_r0r1r1_rel_default.html'>dot_R0R1R1_rel_default</a>(u, v, option) result(a)  
+    private impure function <a href='../proc/dot_r0r1r1_rel_coarray.html'>dot_R0R1R1_rel_coarray</a>(u, v, option, coarray) result(a)  
 
     </h3>
         <dl class="dl-horizontal">
@@ -435,12 +420,12 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-u~5"></span>
+              <span class="anchor" id="variable-u~2"></span>
               real(kind=rk),
             </td>
-<td>intent(in),</td>
+<td>intent(in)</td>
               <td></td>            <td>
-              contiguous
+              
             </td>
             <td>::</td>
             <td><strong>u</strong>(:)</td>
@@ -450,12 +435,12 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-v~5"></span>
+              <span class="anchor" id="variable-v~2"></span>
               real(kind=rk),
             </td>
-<td>intent(in),</td>
+<td>intent(in)</td>
               <td></td>            <td>
-              contiguous
+              
             </td>
             <td>::</td>
             <td><strong>v</strong>(:)</td>
@@ -474,6 +459,21 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>option</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coarray"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>coarray</strong></td>
             <td>
 
             </td>
@@ -499,7 +499,7 @@ large graphs.</div>
         <section>
           <h2>Functions</h2>
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dot_r0r1r1_rel_default"></span> <h3>private pure function <a href='../proc/dot_r0r1r1_rel_default.html'>dot_R0R1R1_rel_default</a>(u, v, option) result(a)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dot_r0r1r1_rel"></span> <h3>private pure function <a href='../proc/dot_r0r1r1_rel.html'>dot_R0R1R1_rel</a>(u, v, option) result(a)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -521,7 +521,7 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-u~5"></span>
+              <span class="anchor" id="variable-u"></span>
               real(kind=rk),
             </td>
 <td>intent(in),</td>
@@ -536,7 +536,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-v~5"></span>
+              <span class="anchor" id="variable-v"></span>
               real(kind=rk),
             </td>
 <td>intent(in),</td>
@@ -551,7 +551,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-option~2"></span>
+              <span class="anchor" id="variable-option"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -577,7 +577,7 @@ large graphs.</div>
   </div>
 
               <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dot_r0r1r1_rel"></span> <h3>private impure function <a href='../proc/dot_r0r1r1_rel.html'>dot_R0R1R1_rel</a>(u, v, method, option) result(a)  
+    <div class="card-header codesum"><span class="anchor" id="proc-dot_r0r1r1_rel_coarray"></span> <h3>private impure function <a href='../proc/dot_r0r1r1_rel_coarray.html'>dot_R0R1R1_rel_coarray</a>(u, v, option, coarray) result(a)  
 </h3></div>
     <div class="card-body">
               <dl class="dl-horizontal">
@@ -599,12 +599,12 @@ large graphs.</div>
     <tbody>
         <tr>
             <td>
-              <span class="anchor" id="variable-u~6"></span>
+              <span class="anchor" id="variable-u~2"></span>
               real(kind=rk),
             </td>
-<td>intent(in),</td>
+<td>intent(in)</td>
               <td></td>            <td>
-              contiguous
+              
             </td>
             <td>::</td>
             <td><strong>u</strong>(:)</td>
@@ -614,12 +614,12 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-v~6"></span>
+              <span class="anchor" id="variable-v~2"></span>
               real(kind=rk),
             </td>
-<td>intent(in),</td>
+<td>intent(in)</td>
               <td></td>            <td>
-              contiguous
+              
             </td>
             <td>::</td>
             <td><strong>v</strong>(:)</td>
@@ -629,22 +629,7 @@ large graphs.</div>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-method"></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>method</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-option~3"></span>
+              <span class="anchor" id="variable-option~2"></span>
               character(len=*),
             </td>
 <td>intent(in)</td>
@@ -653,6 +638,21 @@ large graphs.</div>
             </td>
             <td>::</td>
             <td><strong>option</strong></td>
+            <td>
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-coarray"></span>
+              logical,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>coarray</strong></td>
             <td>
 
             </td>
@@ -710,7 +710,7 @@ author: Seyed Ali Ghasemi</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-nimg"></span>
+              <span class="anchor" id="variable-nimg~2"></span>
               integer,
             </td>
 <td>intent(in)</td>
@@ -725,7 +725,7 @@ author: Seyed Ali Ghasemi</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-block_size"></span>
+              <span class="anchor" id="variable-block_size~2"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -740,7 +740,7 @@ author: Seyed Ali Ghasemi</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-start_elem"></span>
+              <span class="anchor" id="variable-start_elem~2"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -755,7 +755,7 @@ author: Seyed Ali Ghasemi</p>
         </tr>
         <tr>
             <td>
-              <span class="anchor" id="variable-end_elem"></span>
+              <span class="anchor" id="variable-end_elem~2"></span>
               integer,
             </td>
 <td>intent(out)</td>
@@ -795,7 +795,7 @@ author: Seyed Ali Ghasemi</p>
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-01-18T00:45:13.362400             </p>
+ on 2024-01-24T20:40:38.120865             </p>
           </div>
         </div>
         <br>
