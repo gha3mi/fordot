@@ -10,67 +10,56 @@ module fordot
 
    interface dot_product
       procedure :: dot_R0R1R1_rel
-      procedure :: dot_R0R1R1_rel_default
+      procedure :: dot_R0R1R1_rel_coarray
    end interface
 
 contains
 
    !> author: Seyed Ali Ghasemi
-   pure function dot_R0R1R1_rel_default(u,v,option) result(a)
+   pure function dot_R0R1R1_rel(u,v,option) result(a)
       real(rk),     intent(in), contiguous :: u(:)
       real(rk),     intent(in), contiguous :: v(:)
       character(*), intent(in)             :: option
       real(rk)                             :: a
       a = dot_opts(u, v, option)
-   end function dot_R0R1R1_rel_default
+   end function dot_R0R1R1_rel
 
 
 
    !> author: Seyed Ali Ghasemi
-#if defined(USE_COARRAY)
-   impure function dot_R0R1R1_rel(u,v,method,option) result(a)
-#else
-   pure function dot_R0R1R1_rel(u,v,method,option) result(a)
-#endif
-      real(rk),     intent(in), contiguous :: u(:)
-      real(rk),     intent(in), contiguous :: v(:)
-      character(*), intent(in)             :: method
+   impure function dot_R0R1R1_rel_coarray(u,v,option,coarray) result(a)
+      real(rk),     intent(in) :: u(:)
+      real(rk),     intent(in) :: v(:)
       character(*), intent(in)             :: option
       real(rk)                             :: a
-
-      select case (method)
+      logical,      intent(in)             :: coarray
 #if defined(USE_COARRAY)
-       case ('coarray')
+      integer               :: i, im, nimg, m
+      integer               :: block_size(num_images()), start_elem(num_images()), end_elem(num_images())
+      real(rk), allocatable :: a_block[:], u_block(:)[:], v_block(:)[:]
 
-         block
-            integer               :: i, im, nimg, m
-            integer               :: block_size(num_images()), start_elem(num_images()), end_elem(num_images())
-            real(rk), allocatable :: a_block[:], u_block(:)[:], v_block(:)[:]
-            im   = this_image()
-            nimg = num_images()
-            m    = size(u)
-            call compute_block_ranges(size(u), nimg, block_size, start_elem, end_elem)
-            allocate(u_block(block_size(im))[*], v_block(block_size(im))[*], a_block[*])
-            u_block(:)[im] = u(start_elem(im):end_elem(im))
-            v_block(:)[im] = v(start_elem(im):end_elem(im))
-            a_block[im] = dot_opts(u_block(:)[im],v_block(:)[im],option)
-            call co_sum(a_block, result_image=1)
-            a = a_block[1]
-            ! sync all
-            ! if (im == 1) then
-            !    a = 0.0_rk
-            !    do i = 1, nimg
-            !       a = a + a_block[i]
-            !    end do
-            ! end if
-         end block
-
+      im   = this_image()
+      nimg = num_images()
+      m    = size(u)
+      call compute_block_ranges(size(u), nimg, block_size, start_elem, end_elem)
+      allocate(u_block(block_size(im))[*], v_block(block_size(im))[*], a_block[*])
+      u_block(:)[im] = u(start_elem(im):end_elem(im))
+      v_block(:)[im] = v(start_elem(im):end_elem(im))
+      a_block[im] = dot_opts(u_block(:)[im],v_block(:)[im],option)
+      ! call co_sum(a_block, result_image=1)
+      ! a = a_block[1]
+      sync all
+      if (im == 1) then
+         a = 0.0_rk
+         do i = 1, nimg
+            a = a + a_block[i]
+         end do
+      end if
+#else
+      a = dot_product(u, v, option)
 #endif
-       case ('default')
-         a = dot_opts(u, v, option)
-      end select
 
-   end function dot_R0R1R1_rel
+   end function dot_R0R1R1_rel_coarray
 
 
 
@@ -90,7 +79,7 @@ contains
          end_elem(i) = start_elem(i) + block_size(i) - 1
       end do
       ! Check if the block sizes are valid.
-      if (minval(block_size) <= 0) error stop 'fordot: reduce the number of images of coarray.'
+      if (minval(block_size) <= 0) error stop 'ForDot: reduce the number of images of coarray.'
    end subroutine compute_block_ranges
 
 end module fordot

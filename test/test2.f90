@@ -28,19 +28,19 @@ program test_dot2
 
    a_ref = dot_product(u,v)
 
-   a = dot_product(u,v,'coarray')
+   a = dot_product(u,v,coarray=.true.)
    if (im==1) call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot2.1')
 
-   a = dot_product(u,v, 'coarray', 'm1')
+   a = dot_product(u,v, coarray=.true., 'm1')
    if (im==1) call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot2.2')
 
-   a = dot_product(u,v, 'coarray', 'm2')
+   a = dot_product(u,v, coarray=.true., 'm2')
    if (im==1) call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot2.3')
 
-   a = dot_product(u,v, 'coarray', 'm3')
+   a = dot_product(u,v, coarray=.true., 'm3')
    if (im==1) call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot2.4')
 
-   a = dot_product(u,v, 'coarray', 'm4')
+   a = dot_product(u,v, coarray=.true., 'm4')
    if (im==1) call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot2.5')
 
 end program test_dot2
