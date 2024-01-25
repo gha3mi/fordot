@@ -39,7 +39,7 @@ contains
 
       call compute_block_ranges(size(u), nblock, block_size, start_elem, end_elem)
       a = 0.0_rk
-      do concurrent (im = 1:nblock)
+      do im = 1, nblock
          a = a + dot_product(u(start_elem(im):end_elem(im)),v(start_elem(im):end_elem(im)),option)
       end do
       
