@@ -10,6 +10,7 @@ module fordot
 
    interface dot_product
       procedure :: dot_R0R1R1_rel
+      procedure :: dot_R0R1R1_rel_block
       procedure :: dot_R0R1R1_rel_coarray
    end interface
 
@@ -23,6 +24,26 @@ contains
       real(rk)                             :: a
       a = dot_opts(u, v, option)
    end function dot_R0R1R1_rel
+
+
+
+   !> author: Seyed Ali Ghasemi
+   pure function dot_R0R1R1_rel_block(u,v,option,nblock) result(a)
+      real(rk),     intent(in), contiguous :: u(:)
+      real(rk),     intent(in), contiguous :: v(:)
+      character(*), intent(in)             :: option
+      integer,      intent(in)             :: nblock
+      real(rk)                             :: a
+      integer                              :: im
+      integer                              :: block_size(nblock), start_elem(nblock), end_elem(nblock)
+
+      call compute_block_ranges(size(u), nblock, block_size, start_elem, end_elem)
+      a = 0.0_rk
+      do concurrent (im = 1:nblock)
+         a = a + dot_product(u(start_elem(im):end_elem(im)),v(start_elem(im):end_elem(im)),option)
+      end do
+      
+   end function dot_R0R1R1_rel_block
 
 
 

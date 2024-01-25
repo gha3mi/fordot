@@ -10,7 +10,7 @@
     <meta name="author" content="Seyed Ali Ghasemi" >
     <link rel="icon" href="../favicon.png">
 
-    <title>dot_opts &ndash; ForDot</title>
+    <title>dot_R0R1R1_rel_block &ndash; ForDot</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
@@ -59,33 +59,34 @@
 
     <div class="container">
   <div class="row">
-    <h1>dot_opts
-      <small>Interface</small>
+    <h1>dot_R0R1R1_rel_block
+      <small>Function</small>
       
     </h1>
       <div class="container p-2 mb-4 bg-light border rounded-3">
     <div class="row align-items-center justify-content-between" id="info-bar">
       <div class="col">
         <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-author"><i class="fa fa-pencil"></i> Seyed Ali Ghasemi</li>
 
             <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
               <a data-bs-toggle="tooltip"
                  data-bs-placement="bottom" data-html="true"
-                 title="<p> 2.4% of total for procedures.</p>Including implementation: 20 statements, 15.7% of total for procedures.">3 statements</a>
+                 title="11.0% of total for procedures.">14 statements</a>
             </li>
 
             <li class="list-inline-item" id="source-file">
               <i class="fa fa-code"></i>
-              <a href="../src/fordot_options.f90"> Source File</a>
+              <a href="../src/fordot.f90"> Source File</a>
             </li>
         </ul>
       </div>
       <div class="col">
         <nav aria-label="breadcrumb">
           <ol class="breadcrumb justify-content-end mb-0">
-                <li class="breadcrumb-item"><a href='../sourcefile/fordot_options.f90.html'>fordot_options.f90</a></li>
-                <li class="breadcrumb-item"><a href='../module/fordot_opts.html'>fordot_opts</a></li>
-            <li class="breadcrumb-item active" aria-current="page">dot_opts</li>
+                <li class="breadcrumb-item"><a href='../sourcefile/fordot.f90.html'>fordot.f90</a></li>
+                <li class="breadcrumb-item"><a href='../module/fordot.html'>fordot</a></li>
+            <li class="breadcrumb-item active" aria-current="page">dot_R0R1R1_rel_block</li>
           </ol>
         </nav>
       </div>
@@ -98,10 +99,10 @@
   </script>
 
   </div>
-
+  
   <div class="row">
     <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
-        <div id="sidebar">
+      <div id="sidebar">
       <h3>Contents</h3>
   
   
@@ -121,132 +122,149 @@
   
   
   
-      <div class="card mb-4">
-      <a data-bs-toggle="collapse" href="#modprocs-0"
-         aria-expanded="false" aria-controls="modprocs-0">
-         <h4 class="card-header bg-primary text-white">Module Procedures</h4>
-      </a>
-      <div id="modprocs-0" class="collapse">
-        <div class="list-group list-group-flush">
-            <a class="list-group-item" href="../interface/dot_opts.html#moduleprocedure-dot_r0r1r1_rel_opts">dot_R0R1R1_rel_opts</a>
-        </div>
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../proc/dot_r0r1r1_rel_block.html#src">dot_R0R1R1_rel_block</a>
       </div>
     </div>
-
-  
 
 
   </div>
 
     </div>
-
+    
     <div class="col-md-9" id='text'>
-      <h2>public interface dot_opts</h2>
+    <h2>private pure function dot_R0R1R1_rel_block(u, v, option, nblock) result(a)  
+</h2>
+    
+
+
+
+    <h3>Arguments</h3>
+        <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              contiguous
+            </td>
+            <td>::</td>
+            <td><strong>u</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v~6"></span>
+              real(kind=rk),
+            </td>
+<td>intent(in),</td>
+              <td></td>            <td>
+              contiguous
+            </td>
+            <td>::</td>
+            <td><strong>v</strong>(:)</td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-option~3"></span>
+              character(len=*),
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>option</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-nblock"></span>
+              integer,
+            </td>
+<td>intent(in)</td>
+              <td></td>            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>nblock</strong></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+      <h3>Return Value
+        <small>
+          <span class="anchor" id="variable-a~6"></span>
+          real(kind=rk)
+        </small>
+      </h3>
       
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Calls</h3>
-          </div>
-          <div class="card-body">
-            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: interface~~dot_opts~~CallsGraph Pages: 1 -->
-<svg id="interfacedot_optsCallsGraph" width="641pt" height="106pt"
- viewBox="0.00 0.00 641.00 105.62" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="interface~~dot_opts~~CallsGraph" class="graph" transform="scale(1.1 1.1) rotate(0) translate(4 112)">
-<title>interface~~dot_opts~~CallsGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-112 700,-112 700,4 -4,4"/>
-<!-- interface~dot_opts -->
-<g id="interface~~dot_opts~~CallsGraph_node1" class="node">
-<title>interface~dot_opts</title>
-<polygon fill="none" stroke="black" points="125,-66 0,-66 0,-42 125,-42 125,-66"/>
-<text text-anchor="middle" x="62.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50">fordot_opts::dot_opts</text>
+<!-- Title: proc~~dot_r0r1r1_rel_block~~CallsGraph Pages: 1 -->
+<svg id="procdot_r0r1r1_rel_blockCallsGraph" width="389pt" height="32pt"
+ viewBox="0.00 0.00 389.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~dot_r0r1r1_rel_block~~CallsGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~dot_r0r1r1_rel_block~~CallsGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 385,-28 385,4 -4,4"/>
+<!-- proc~dot_r0r1r1_rel_block -->
+<g id="proc~~dot_r0r1r1_rel_block~~CallsGraph_node1" class="node">
+<title>proc~dot_r0r1r1_rel_block</title>
+<polygon fill="none" stroke="black" points="170,-24 0,-24 0,0 170,0 170,-24"/>
+<text text-anchor="middle" x="85" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">fordot::dot_R0R1R1_rel_block</text>
 </g>
-<!-- proc~dot_r0r1r1_rel_opts -->
-<g id="interface~~dot_opts~~CallsGraph_node2" class="node">
-<title>proc~dot_r0r1r1_rel_opts</title>
-<g id="a_interface~~dot_opts~~CallsGraph_node2"><a xlink:href="../proc/dot_r0r1r1_rel_opts.html" xlink:title="fordot_opts::dot_R0R1R1_rel_opts">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="353,-66 161,-66 161,-42 353,-42 353,-66"/>
-<text text-anchor="middle" x="257" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot_opts::dot_R0R1R1_rel_opts</text>
+<!-- proc~compute_block_ranges -->
+<g id="proc~~dot_r0r1r1_rel_block~~CallsGraph_node2" class="node">
+<title>proc~compute_block_ranges</title>
+<g id="a_proc~~dot_r0r1r1_rel_block~~CallsGraph_node2"><a xlink:href="../proc/compute_block_ranges.html" xlink:title="fordot::compute_block_ranges">
+<polygon fill="#d9534f" stroke="#d9534f" points="381,-24 206,-24 206,0 381,0 381,-24"/>
+<text text-anchor="middle" x="293.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot::compute_block_ranges</text>
 </a>
 </g>
 </g>
-<!-- interface~dot_opts&#45;&gt;proc~dot_r0r1r1_rel_opts -->
-<g id="interface~~dot_opts~~CallsGraph_edge1" class="edge">
-<title>interface~dot_opts&#45;&gt;proc~dot_r0r1r1_rel_opts</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M125.2,-54C133.42,-54 142.03,-54 150.74,-54"/>
-<polygon fill="#255000" stroke="#255000" points="150.99,-57.5 160.99,-54 150.99,-50.5 150.99,-57.5"/>
-</g>
-<!-- proc~md_2 -->
-<g id="interface~~dot_opts~~CallsGraph_node3" class="node">
-<title>proc~md_2</title>
-<g id="a_interface~~dot_opts~~CallsGraph_node3"><a xlink:href="../proc/md_2.html" xlink:title="fordot_opts::md_2">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="498,-108 389,-108 389,-84 498,-84 498,-108"/>
-<text text-anchor="middle" x="443.5" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot_opts::md_2</text>
-</a>
-</g>
-</g>
-<!-- proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_2 -->
-<g id="interface~~dot_opts~~CallsGraph_edge2" class="edge">
-<title>proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_2</title>
-<path fill="none" stroke="#255000" d="M310.87,-66.04C332.39,-70.93 357.43,-76.63 379.86,-81.74"/>
-<polygon fill="#255000" stroke="#255000" points="379.09,-85.16 389.62,-83.96 380.65,-78.33 379.09,-85.16"/>
-</g>
-<!-- proc~md_3 -->
-<g id="interface~~dot_opts~~CallsGraph_node4" class="node">
-<title>proc~md_3</title>
-<g id="a_interface~~dot_opts~~CallsGraph_node4"><a xlink:href="../proc/md_3.html" xlink:title="fordot_opts::md_3">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="498,-66 389,-66 389,-42 498,-42 498,-66"/>
-<text text-anchor="middle" x="443.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot_opts::md_3</text>
-</a>
-</g>
-</g>
-<!-- proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_3 -->
-<g id="interface~~dot_opts~~CallsGraph_edge3" class="edge">
-<title>proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_3</title>
-<path fill="none" stroke="#255000" d="M353.22,-54C361.77,-54 370.29,-54 378.47,-54"/>
-<polygon fill="#255000" stroke="#255000" points="378.65,-57.5 388.65,-54 378.65,-50.5 378.65,-57.5"/>
-</g>
-<!-- proc~md_4 -->
-<g id="interface~~dot_opts~~CallsGraph_node5" class="node">
-<title>proc~md_4</title>
-<g id="a_interface~~dot_opts~~CallsGraph_node5"><a xlink:href="../proc/md_4.html" xlink:title="fordot_opts::md_4">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="498,-24 389,-24 389,0 498,0 498,-24"/>
-<text text-anchor="middle" x="443.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot_opts::md_4</text>
-</a>
-</g>
-</g>
-<!-- proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_4 -->
-<g id="interface~~dot_opts~~CallsGraph_edge4" class="edge">
-<title>proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_4</title>
-<path fill="none" stroke="#255000" d="M310.87,-41.96C332.39,-37.07 357.43,-31.37 379.86,-26.26"/>
-<polygon fill="#255000" stroke="#255000" points="380.65,-29.67 389.62,-24.04 379.09,-22.84 380.65,-29.67"/>
-</g>
-<!-- interface~dot -->
-<g id="interface~~dot_opts~~CallsGraph_node6" class="node">
-<title>interface~dot</title>
-<g id="a_interface~~dot_opts~~CallsGraph_node6"><a xlink:href="../interface/dot.html" xlink:title="external_interfaces_dot::dot">
-<polygon fill="#a7506f" stroke="#a7506f" points="696,-108 534,-108 534,-84 696,-84 696,-108"/>
-<text text-anchor="middle" x="615" y="-93.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">external_interfaces_dot::dot</text>
-</a>
-</g>
-</g>
-<!-- proc~md_2&#45;&gt;interface~dot -->
-<g id="interface~~dot_opts~~CallsGraph_edge5" class="edge">
-<title>proc~md_2&#45;&gt;interface~dot</title>
-<path fill="none" stroke="#255000" d="M498.13,-96C506.29,-96 514.89,-96 523.57,-96"/>
-<polygon fill="#255000" stroke="#255000" points="523.78,-99.5 533.78,-96 523.78,-92.5 523.78,-99.5"/>
+<!-- proc~dot_r0r1r1_rel_block&#45;&gt;proc~compute_block_ranges -->
+<g id="proc~~dot_r0r1r1_rel_block~~CallsGraph_edge1" class="edge">
+<title>proc~dot_r0r1r1_rel_block&#45;&gt;proc~compute_block_ranges</title>
+<path fill="none" stroke="#255000" d="M170.29,-12C178.61,-12 187.11,-12 195.55,-12"/>
+<polygon fill="#255000" stroke="#255000" points="195.8,-15.5 205.8,-12 195.8,-8.5 195.8,-15.5"/>
 </g>
 </g>
 </svg>
-</div>                <script>
-                  var paninterfacedot_optsCallsGraph = svgPanZoom('#interfacedot_optsCallsGraph',
-                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
-                  );
-                </script>          <div>
+</div>          <div>
             <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
           </div>
           <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
@@ -325,80 +343,44 @@ large graphs.</div>
             </div>
           </div>
         </div>
-          </div>
-        </div>
-        <div class="card">
-          <div class="card-header">
-            <h3 class="card-title">Called by</h3>
-          </div>
-          <div class="card-body">
-            <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Called by</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
  "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
 <!-- Generated by graphviz version 2.43.0 (0)
  -->
-<!-- Title: interface~~dot_opts~~CalledByGraph Pages: 1 -->
-<svg id="interfacedot_optsCalledByGraph" width="503pt" height="74pt"
- viewBox="0.00 0.00 503.00 74.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-<g id="interface~~dot_opts~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 70)">
-<title>interface~~dot_opts~~CalledByGraph</title>
-<polygon fill="white" stroke="transparent" points="-4,4 -4,-70 499,-70 499,4 -4,4"/>
-<!-- interface~dot_opts -->
-<g id="interface~~dot_opts~~CalledByGraph_node1" class="node">
-<title>interface~dot_opts</title>
-<polygon fill="none" stroke="black" points="495,-45 370,-45 370,-21 495,-21 495,-45"/>
-<text text-anchor="middle" x="432.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50">fordot_opts::dot_opts</text>
-</g>
-<!-- proc~dot_r0r1r1_rel -->
-<g id="interface~~dot_opts~~CalledByGraph_node2" class="node">
-<title>proc~dot_r0r1r1_rel</title>
-<g id="a_interface~~dot_opts~~CalledByGraph_node2"><a xlink:href="../proc/dot_r0r1r1_rel.html" xlink:title="fordot::dot_R0R1R1_rel">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="310.5,-66 174.5,-66 174.5,-42 310.5,-42 310.5,-66"/>
-<text text-anchor="middle" x="242.5" y="-51.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot::dot_R0R1R1_rel</text>
-</a>
-</g>
-</g>
-<!-- proc~dot_r0r1r1_rel&#45;&gt;interface~dot_opts -->
-<g id="interface~~dot_opts~~CalledByGraph_edge1" class="edge">
-<title>proc~dot_r0r1r1_rel&#45;&gt;interface~dot_opts</title>
-<path fill="none" stroke="#255000" d="M310.58,-46.51C326.41,-44.74 343.35,-42.85 359.39,-41.05"/>
-<polygon fill="#255000" stroke="#255000" points="360.23,-44.48 369.78,-39.89 359.45,-37.53 360.23,-44.48"/>
-</g>
-<!-- proc~dot_r0r1r1_rel_coarray -->
-<g id="interface~~dot_opts~~CalledByGraph_node3" class="node">
-<title>proc~dot_r0r1r1_rel_coarray</title>
-<g id="a_interface~~dot_opts~~CalledByGraph_node3"><a xlink:href="../proc/dot_r0r1r1_rel_coarray.html" xlink:title="fordot::dot_R0R1R1_rel_coarray">
-<polygon fill="#d94e8f" stroke="#d94e8f" points="334,-24 151,-24 151,0 334,0 334,-24"/>
-<text text-anchor="middle" x="242.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot::dot_R0R1R1_rel_coarray</text>
-</a>
-</g>
-</g>
-<!-- proc~dot_r0r1r1_rel_coarray&#45;&gt;interface~dot_opts -->
-<g id="interface~~dot_opts~~CalledByGraph_edge2" class="edge">
-<title>proc~dot_r0r1r1_rel_coarray&#45;&gt;interface~dot_opts</title>
-<path fill="none" stroke="#255000" d="M334.2,-22.13C342.81,-23.09 351.46,-24.06 359.85,-25"/>
-<polygon fill="#255000" stroke="#255000" points="359.62,-28.49 369.95,-26.12 360.4,-21.54 359.62,-28.49"/>
+<!-- Title: proc~~dot_r0r1r1_rel_block~~CalledByGraph Pages: 1 -->
+<svg id="procdot_r0r1r1_rel_blockCalledByGraph" width="329pt" height="32pt"
+ viewBox="0.00 0.00 329.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="proc~~dot_r0r1r1_rel_block~~CalledByGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 28)">
+<title>proc~~dot_r0r1r1_rel_block~~CalledByGraph</title>
+<polygon fill="white" stroke="transparent" points="-4,4 -4,-28 325,-28 325,4 -4,4"/>
+<!-- proc~dot_r0r1r1_rel_block -->
+<g id="proc~~dot_r0r1r1_rel_block~~CalledByGraph_node1" class="node">
+<title>proc~dot_r0r1r1_rel_block</title>
+<polygon fill="none" stroke="black" points="321,-24 151,-24 151,0 321,0 321,-24"/>
+<text text-anchor="middle" x="236" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50">fordot::dot_R0R1R1_rel_block</text>
 </g>
 <!-- interface~dot_product -->
-<g id="interface~~dot_opts~~CalledByGraph_node4" class="node">
+<g id="proc~~dot_r0r1r1_rel_block~~CalledByGraph_node2" class="node">
 <title>interface~dot_product</title>
-<g id="a_interface~~dot_opts~~CalledByGraph_node4"><a xlink:href="../interface/dot_product.html" xlink:title="fordot::dot_product">
-<polygon fill="#a7506f" stroke="#a7506f" points="115,-45 0,-45 0,-21 115,-21 115,-45"/>
-<text text-anchor="middle" x="57.5" y="-30.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot::dot_product</text>
+<g id="a_proc~~dot_r0r1r1_rel_block~~CalledByGraph_node2"><a xlink:href="../interface/dot_product.html" xlink:title="fordot::dot_product">
+<polygon fill="#a7506f" stroke="#a7506f" points="115,-24 0,-24 0,0 115,0 115,-24"/>
+<text text-anchor="middle" x="57.5" y="-9.6" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot::dot_product</text>
 </a>
 </g>
 </g>
-<!-- interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel -->
-<g id="interface~~dot_opts~~CalledByGraph_edge3" class="edge">
-<title>interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel</title>
-<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M115.4,-39.53C130.87,-41.3 147.88,-43.26 164.27,-45.14"/>
-<polygon fill="#255000" stroke="#255000" points="164.03,-48.63 174.37,-46.3 164.83,-41.68 164.03,-48.63"/>
-</g>
-<!-- interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_coarray -->
-<g id="interface~~dot_opts~~CalledByGraph_edge4" class="edge">
-<title>interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_coarray</title>
-<path fill="none" stroke="#025525" stroke-dasharray="5,2" stroke-opacity="0.019608" d="M115.4,-26.47C123.47,-25.54 131.96,-24.57 140.56,-23.58"/>
-<polygon fill="#025525" fill-opacity="0.019608" stroke="#025525" stroke-opacity="0.019608" points="141.16,-27.04 150.69,-22.42 140.36,-20.08 141.16,-27.04"/>
+<!-- interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_block -->
+<g id="proc~~dot_r0r1r1_rel_block~~CalledByGraph_edge1" class="edge">
+<title>interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_block</title>
+<path fill="none" stroke="#255000" stroke-dasharray="5,2" d="M115.32,-12C123.5,-12 132.1,-12 140.78,-12"/>
+<polygon fill="#255000" stroke="#255000" points="140.98,-15.5 150.98,-12 140.98,-8.5 140.98,-15.5"/>
 </g>
 </g>
 </svg>
@@ -481,92 +463,46 @@ large graphs.</div>
             </div>
           </div>
         </div>
-          </div>
-        </div>
-<br>
+      </div>
+    </div>
+    <br>
 
 
-        <h2>Module Procedures</h2>
-            <div class="card">
-    <div class="card-header codesum"><span class="anchor" id="proc-dot_r0r1r1_rel_opts"></span> <h3>private pure function <a href='../proc/dot_r0r1r1_rel_opts.html'>dot_R0R1R1_rel_opts</a>(u, v, option) result(a)  
-</h3></div>
-    <div class="card-body">
-              <dl class="dl-horizontal">
-        <dt>Author</dt><dd>Seyed Ali Ghasemi</dd>
-    </dl>
-
-  
-
-  <h4>Arguments</h4>
-      <table class="table table-striped varlist">
-    <thead>
-      <tr>
-        <th scope="col">Type</th>
-<th scope="col">Intent</th><th scope="col">Optional</th>        <th scope="col">Attributes</th>
-        <th scope="col"></th>
-        <th scope="col">Name</th>
-        <th scope="col"></th>
-    </thead>
-    <tbody>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-u"></span>
-              real(kind=rk),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:), contiguous
-            </td>
-            <td>::</td>
-            <td><strong>u</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-v"></span>
-              real(kind=rk),
-            </td>
-<td>intent(in),</td>
-              <td></td>            <td>
-              dimension(:), contiguous
-            </td>
-            <td>::</td>
-            <td><strong>v</strong></td>
-            <td>
-
-            </td>
-        </tr>
-        <tr>
-            <td>
-              <span class="anchor" id="variable-option"></span>
-              character(len=*),
-            </td>
-<td>intent(in)</td>
-              <td></td>            <td>
-              
-            </td>
-            <td>::</td>
-            <td><strong>option</strong></td>
-            <td>
-
-            </td>
-        </tr>
-    </tbody>
-  </table>
-
-    <h4>
-    Return Value
-    <small>real(kind=rk)</small>
-    </h4>
+    
     
 
+    
+    
+
+
+
+    
+    <section>
+    <h2><span class="anchor" id="src"></span>Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="w">   </span><span class="k">pure function </span><span class="n">dot_R0R1R1_rel_block</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">option</span><span class="p">,</span><span class="n">nblock</span><span class="p">)</span><span class="w"> </span><span class="k">result</span><span class="p">(</span><span class="n">a</span><span class="p">)</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w">     </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">contiguous</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">u</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w">     </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">),</span><span class="w"> </span><span class="k">contiguous</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">v</span><span class="p">(:)</span>
+<span class="w">      </span><span class="kt">character</span><span class="p">(</span><span class="o">*</span><span class="p">),</span><span class="w"> </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">option</span>
+<span class="w">      </span><span class="kt">integer</span><span class="p">,</span><span class="w">      </span><span class="k">intent</span><span class="p">(</span><span class="n">in</span><span class="p">)</span><span class="w">             </span><span class="kd">::</span><span class="w"> </span><span class="n">nblock</span>
+<span class="w">      </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">                             </span><span class="kd">::</span><span class="w"> </span><span class="n">a</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">im</span>
+<span class="w">      </span><span class="kt">integer</span><span class="w">                              </span><span class="kd">::</span><span class="w"> </span><span class="n">block_size</span><span class="p">(</span><span class="n">nblock</span><span class="p">),</span><span class="w"> </span><span class="n">start_elem</span><span class="p">(</span><span class="n">nblock</span><span class="p">),</span><span class="w"> </span><span class="n">end_elem</span><span class="p">(</span><span class="n">nblock</span><span class="p">)</span>
+
+<span class="w">      </span><span class="k">call </span><span class="n">compute_block_ranges</span><span class="p">(</span><span class="n">size</span><span class="p">(</span><span class="n">u</span><span class="p">),</span><span class="w"> </span><span class="n">nblock</span><span class="p">,</span><span class="w"> </span><span class="n">block_size</span><span class="p">,</span><span class="w"> </span><span class="n">start_elem</span><span class="p">,</span><span class="w"> </span><span class="n">end_elem</span><span class="p">)</span>
+<span class="w">      </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mf">0.0_rk</span>
+<span class="w">      </span><span class="k">do</span><span class="w"> </span><span class="k">concurrent</span><span class="w"> </span><span class="p">(</span><span class="n">im</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="p">:</span><span class="n">nblock</span><span class="p">)</span>
+<span class="w">         </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">a</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">dot_product</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">start_elem</span><span class="p">(</span><span class="n">im</span><span class="p">):</span><span class="n">end_elem</span><span class="p">(</span><span class="n">im</span><span class="p">)),</span><span class="n">v</span><span class="p">(</span><span class="n">start_elem</span><span class="p">(</span><span class="n">im</span><span class="p">):</span><span class="n">end_elem</span><span class="p">(</span><span class="n">im</span><span class="p">)),</span><span class="n">option</span><span class="p">)</span>
+<span class="w">      </span><span class="k">end do</span>
+<span class="k">      </span>
+<span class="k">   end function </span><span class="n">dot_R0R1R1_rel_block</span>
+</pre></div>
+
+    </section>
+    <br>
+    
     </div>
   </div>
 
-</div>
-  </div>
       <hr>
     </div> <!-- /container -->
     <footer>
