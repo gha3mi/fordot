@@ -12,7 +12,7 @@
 ```fortran
 use fordot
 
-a = dot_product(u,v,'coarray','m1')
+a = dot_product(u,v,coarray,option,nblock)
 ```
 
 ## fpm dependency
