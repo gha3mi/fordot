@@ -15,6 +15,8 @@ use fordot
 a = dot_product(u,v,coarray,option,nblock)
 ```
 
+**Note**: Use the flag `-DUSE_DO_CONCURRENT` to enable do concurrent. This implementation of do concurrent is currently only supported by the Intel Compiler (ifx).
+
 ## fpm dependency
 
 If you want to use `ForDot` as a dependency in your own fpm project,

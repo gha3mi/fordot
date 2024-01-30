@@ -34,15 +34,24 @@ contains
       character(*), intent(in)             :: option
       integer,      intent(in)             :: nblock
       real(rk)                             :: a
-      integer                              :: im
+      integer                              :: im, se, ee
       integer                              :: block_size(nblock), start_elem(nblock), end_elem(nblock)
 
       call compute_block_ranges(size(u), nblock, block_size, start_elem, end_elem)
       a = 0.0_rk
+#if defined(USE_DO_CONCURRENT)
+      do concurrent (im = 1: nblock) reduce(+:a)
+         se = start_elem(im)
+         ee = end_elem(im)
+         a = a + dot_product(u(se:ee),v(se:ee),option)
+    end do
+#else
       do im = 1, nblock
-         a = a + dot_product(u(start_elem(im):end_elem(im)),v(start_elem(im):end_elem(im)),option)
+         se = start_elem(im)
+         ee = end_elem(im)
+         a = a + dot_product(u(se:ee),v(se:ee),option)
       end do
-      
+#endif
    end function dot_R0R1R1_rel_block
 
 
