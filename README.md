@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/732658661.svg)](https://zenodo.org/doi/10.5281/zenodo.10594970)
 [![GitHub](https://img.shields.io/badge/GitHub-ForDot-blue.svg?style=social&logo=github)](https://github.com/gha3mi/fordot)
 [![Version](https://img.shields.io/github/release/gha3mi/fordot.svg)](https://github.com/gha3mi/fordot/releases/latest)
 [![Documentation](https://img.shields.io/badge/ford-Documentation%20-blueviolet.svg)](https://gha3mi.github.io/fordot/)
@@ -74,3 +75,18 @@ ford ford.yml
 
 Contributions to `ForDot` are welcome!
 If you find any issues or would like to suggest improvements, please open an issue.
+
+## Citation
+
+If you use `ForDot` in your work, please cite it using the following DOI:
+
+```
+@misc{https://doi.org/10.5281/zenodo.10594971,
+  doi = {10.5281/ZENODO.10594971},
+  url = {https://zenodo.org/doi/10.5281/zenodo.10594971},
+  author = {Seyed Ali Ghasemi},
+  title = {gha3mi/fordot: v0.1.0},
+  publisher = {Zenodo},
+  year = {2024},
+}
+```
