@@ -20,9 +20,13 @@ contains
    pure function dot_R0R1R1_rel(u,v,option) result(a)
       real(rk),     intent(in), contiguous :: u(:)
       real(rk),     intent(in), contiguous :: v(:)
-      character(*), intent(in)             :: option
+      character(*), intent(in), optional   :: option
       real(rk)                             :: a
-      a = dot_opts(u, v, option)
+      if (present(option)) then
+         a = dot_opts(u, v, option)
+      else
+         a = dot_opts(u, v, option='m2')
+      end if
    end function dot_R0R1R1_rel
 
 
@@ -31,7 +35,7 @@ contains
    pure function dot_R0R1R1_rel_block(u,v,option,nblock) result(a)
       real(rk),     intent(in), contiguous :: u(:)
       real(rk),     intent(in), contiguous :: v(:)
-      character(*), intent(in)             :: option
+      character(*), intent(in), optional   :: option
       integer,      intent(in)             :: nblock
       real(rk)                             :: a
       integer                              :: im, se, ee
@@ -60,7 +64,7 @@ contains
    impure function dot_R0R1R1_rel_coarray(u,v,option,coarray) result(a)
       real(rk),     intent(in), contiguous :: u(:)
       real(rk),     intent(in), contiguous :: v(:)
-      character(*), intent(in)             :: option
+      character(*), intent(in), optional   :: option
       real(rk)                             :: a
       logical,      intent(in)             :: coarray
 #if defined(USE_COARRAY)
@@ -77,16 +81,16 @@ contains
       ee = end_elem(im)
       u_block(:)[im] = u(se:ee)
       v_block(:)[im] = v(se:ee)
-      a_block[im] = dot_opts(u_block(:)[im],v_block(:)[im],option)
-      ! call co_sum(a_block, result_image=1)
-      ! a = a_block[1]
-      sync all
-      if (im == 1) then
-         a = 0.0_rk
-         do i = 1, nimg
-            a = a + a_block[i]
-         end do
-      end if
+      a_block[im] = dot_product(u_block(:)[im],v_block(:)[im],option)
+      call co_sum(a_block, result_image=1)
+      a = a_block[1]
+      ! sync all
+      ! if (im == 1) then
+      !    a = 0.0_rk
+      !    do i = 1, nimg
+      !       a = a + a_block[i]
+      !    end do
+      ! end if
 #else
       a = dot_product(u, v, option)
 #endif
