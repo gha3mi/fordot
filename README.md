@@ -15,9 +15,19 @@ use fordot
 a = dot_product(u,v,coarray,option,nblock)
 ```
 
-**Note**: Use the flag `-DUSE_DO_CONCURRENT` to enable do concurrent. This implementation of do concurrent is currently only supported by the Intel Compiler (ifx).
+- `coarray` is an optional logical variable. Set it to `.true.` and use the `-DUSE_COARRAY` flag to enable coarray.
+- `nblock` is an optional integer variable.
+- `options` is a character variable. Available options are `'m1'` to `'m4'`.
 
-## fpm dependency
+- **Note**: Use the flag `-DUSE_DO_CONCURRENT` to enable do concurrent. This implementation of do concurrent is currently only supported by the Intel Compiler (ifx).
+
+## Requirements
+
+- A Fortran Compiler
+- BLAS Library
+- Fortran Package Manager (fpm)
+
+## fpm Dependency
 
 If you want to use `ForDot` as a dependency in your own fpm project,
 you can easily include it by adding the following line to your `fpm.toml` file:
@@ -27,10 +37,28 @@ you can easily include it by adding the following line to your `fpm.toml` file:
 fordot = {git="https://github.com/gha3mi/fordot.git"}
 ```
 
+## Runing Tests
+
+Execute the following commands to run tests with specific compilers:
+
+```shell
+fpm @<compiler>-test
+```
+`compiler: ifx, ifort, gfortran, nvfortran`
+
+For coarray testing use:
+
+```shell
+fpm @<compiler>-test-coarray
+```
+`compiler: ifx, ifort`
+
+All compiler options are accessible in the fpm response file `fpm.rsp`.
+
 ## Benchmarks
 You can find benchmark results on [ForBenchmark](https://github.com/gha3mi/forbenchmark/tree/main/benchmarks/dot).
 
-## API documentation
+## API Documentation
 
 The most up-to-date API documentation for the master branch is available
 [here](https://gha3mi.github.io/fordot/).
