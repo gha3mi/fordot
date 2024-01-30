@@ -58,13 +58,13 @@ contains
 
    !> author: Seyed Ali Ghasemi
    impure function dot_R0R1R1_rel_coarray(u,v,option,coarray) result(a)
-      real(rk),     intent(in) :: u(:)
-      real(rk),     intent(in) :: v(:)
+      real(rk),     intent(in), contiguous :: u(:)
+      real(rk),     intent(in), contiguous :: v(:)
       character(*), intent(in)             :: option
       real(rk)                             :: a
       logical,      intent(in)             :: coarray
 #if defined(USE_COARRAY)
-      integer               :: i, im, nimg, m
+      integer               :: i, im, nimg, m, se, ee
       integer               :: block_size(num_images()), start_elem(num_images()), end_elem(num_images())
       real(rk), allocatable :: a_block[:], u_block(:)[:], v_block(:)[:]
 
@@ -73,8 +73,10 @@ contains
       m    = size(u)
       call compute_block_ranges(size(u), nimg, block_size, start_elem, end_elem)
       allocate(u_block(block_size(im))[*], v_block(block_size(im))[*], a_block[*])
-      u_block(:)[im] = u(start_elem(im):end_elem(im))
-      v_block(:)[im] = v(start_elem(im):end_elem(im))
+      se = start_elem(im)
+      ee = end_elem(im)
+      u_block(:)[im] = u(se:ee)
+      v_block(:)[im] = v(se:ee)
       a_block[im] = dot_opts(u_block(:)[im],v_block(:)[im],option)
       ! call co_sum(a_block, result_image=1)
       ! a = a_block[1]
