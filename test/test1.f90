@@ -1,7 +1,7 @@
 program test_dot1
 
    use kinds
-   use fordot
+   use fordot, only: fdot_product => dot_product ! rename dot_product to fdot_product to avoid overloading
    use forunittest
 
    implicit none
@@ -22,28 +22,28 @@ program test_dot1
 
    a_ref = dot_product(u,v)
 
-   a = dot_product(u,v, option='m1')
+   a = fdot_product(u,v, option='m1')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.1')
 
-   a = dot_product(u,v, option='m2')
+   a = fdot_product(u,v, option='m2')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.2')
 
-   a = dot_product(u,v, option='m3')
+   a = fdot_product(u,v, option='m3')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.3')
 
-   a = dot_product(u,v, option='m4')
+   a = fdot_product(u,v, option='m4')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.4')
 
-   a = dot_product(u,v, option='m1b', nblock=16)
+   a = fdot_product(u,v, option='m1b', nblock=16)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.5')
 
-   a = dot_product(u,v, option='m2b', nblock=16)
+   a = fdot_product(u,v, option='m2b', nblock=16)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.6')
 
-   a = dot_product(u,v, option='m3b', nblock=16)
+   a = fdot_product(u,v, option='m3b', nblock=16)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.7')
 
-   a = dot_product(u,v, option='m4b', nblock=16)
+   a = fdot_product(u,v, option='m4b', nblock=16)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.8')
 
 end program test_dot1
