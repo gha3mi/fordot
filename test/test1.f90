@@ -22,29 +22,35 @@ program test_dot1
 
    a_ref = dot_product(u,v)
 
-   a = fdot_product(u,v, option='m1')
+   a = fdot_product(u,v)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.1')
 
-   a = fdot_product(u,v, option='m2')
+   a = fdot_product(u,v, option='m1')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.2')
 
-   a = fdot_product(u,v, option='m3')
+   a = fdot_product(u,v, option='m2')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.3')
 
-   a = fdot_product(u,v, option='m4')
+   a = fdot_product(u,v, option='m3')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.4')
 
-   a = fdot_product(u,v, option='m1b', nblock=16)
+   a = fdot_product(u,v, option='m4')
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.5')
 
-   a = fdot_product(u,v, option='m2b', nblock=16)
+   a = fdot_product(u,v, nblock=16)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.6')
 
-   a = fdot_product(u,v, option='m3b', nblock=16)
+   a = fdot_product(u,v, option='m1b', nblock=16)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.7')
 
-   a = fdot_product(u,v, option='m4b', nblock=16)
+   a = fdot_product(u,v, option='m2b', nblock=16)
    call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.8')
+
+   a = fdot_product(u,v, option='m3b', nblock=16)
+   call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.9')
+
+   a = fdot_product(u,v, option='m4b', nblock=16)
+   call ut%check(a, a_ref, tol=1e-5_rk, msg='test_dot1.10')
 
 end program test_dot1
 
