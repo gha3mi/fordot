@@ -81,12 +81,14 @@ If you find any issues or would like to suggest improvements, please open an iss
 If you use `ForDot` in your work, please cite it using the following DOI:
 
 ```
-@misc{https://doi.org/10.5281/zenodo.10594971,
-  doi = {10.5281/ZENODO.10594971},
-  url = {https://zenodo.org/doi/10.5281/zenodo.10594971},
-  author = {Seyed Ali Ghasemi},
-  title = {gha3mi/fordot: v0.1.0},
-  publisher = {Zenodo},
-  year = {2024},
+@software{ghasemi_2024_10594971,
+  author       = {Ghasemi, Seyed Ali},
+  title        = {gha3mi/fordot: v0.1.0},
+  month        = jan,
+  year         = 2024,
+  publisher    = {Zenodo},
+  version      = {v0.1.0},
+  doi          = {10.5281/zenodo.10594971},
+  url          = {https://doi.org/10.5281/zenodo.10594971}
 }
 ```
