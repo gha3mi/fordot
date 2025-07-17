@@ -4,3 +4,5 @@
 /.vscode
 /mod
 /tmp
+gmon.out
+/coverage

@@ -33,3 +33,10 @@ options test
 options --compiler gfortran
 options --profile release
 options --flag "-O3 -march=native -lblas -fopenmp -flto"
+
+@gfortran-gcov
+options test
+options --compiler gfortran
+options --flag "--coverage -O0 -pg -lblas"
+system mkdir -p coverage
+system gcovr -j $(nproc) --calls --html-title "ForDot Code Coverage Report" --html-tab-size 4 --html-theme github.blue --html-details coverage/coverage.html -e build/
