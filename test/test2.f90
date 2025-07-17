@@ -2,7 +2,7 @@ program test_dot2
 
    use kinds
    use fordot, only: fdot_product => dot_product ! rename dot_product to fdot_product to avoid overloading
-   use forunittest
+   use forunittest, only: unit_test
 
    implicit none
 
