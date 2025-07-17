@@ -31,11 +31,11 @@ jobs:
         compiler: [gfortran, ifx, lfortran, flang-new, nvfortran]
         include:
           - os: ubuntu-latest
-            extra-packages: "libblas"
+            extra-packages: "blas blas-devel libblas"
           - os: windows-latest
-            extra-packages: "libblas"
+            extra-packages: "blas blas-devel libblas mkl"
           - os: macos-latest
-            extra-packages: "libblas"
+            extra-packages: "blas blas-devel libblas"
         exclude:
           - os: macos-latest
             compiler: flang-new
@@ -55,10 +55,10 @@ jobs:
           extra-packages: ${{ matrix.extra-packages }}
 
       - name: fpm test (debug)
-        run: fpm test --compiler ${{ matrix.compiler }} --flag "-cpp" --link-flag "-lblas" --verbose --profile debug
+        run: fpm test @${{ matrix.os }}_${{ matrix.compiler }}_debug --verbose
 
       - name: fpm test (release)
-        run: fpm test --compiler ${{ matrix.compiler }} --flag "-cpp" --link-flag "-lblas" --verbose --profile release
+        run: fpm test @${{ matrix.os }}_${{ matrix.compiler }}_release --verbose
 
   doc_ford:
     if: ${{ github.event_name == 'push' && !contains(github.event.head_commit.message, '[skip ci]') }}
