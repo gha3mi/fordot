@@ -1,0 +1,868 @@
+<!-- -*- mode: jinja2 -*- -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="description" content="Documentation for ForDot">
+    <meta name="author" content="Seyed Ali Ghasemi" >
+    <link rel="icon" href="../favicon.png">
+
+    <title>test_dot2 &ndash; ForDot</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="../css/fontawesome.min.css" rel="stylesheet">
+    <link href="../css/brands.min.css" rel="stylesheet">
+    <link href="../css/regular.min.css" rel="stylesheet">
+    <link href="../css/solid.min.css" rel="stylesheet">
+    <link href="../css/v4-font-face.min.css" rel="stylesheet">
+    <link href="../css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
+    <link href="../css/local.css" rel="stylesheet">
+    <link href="../css/pygments.css" rel="stylesheet">
+    <script src="../js/svg-pan-zoom.min.js"></script>
+  </head>
+
+  <body>
+
+    <!-- Fixed navbar -->
+    <div class="container-fluid mb-sm-4 mb-xl-2">
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="../index.html">ForDot <small>0.2.0</small></a>
+          <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbar"
+                  aria-expanded="false" aria-controls="navbar" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon">
+          </button>
+
+          <div id="navbar" class="navbar-collapse collapse">
+            <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link" href="../lists/files.html">Source Files</a>
+                  </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/modules.html">Modules</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/procedures.html">Procedures</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="../lists/programs.html">Programs</a>
+                </li>
+            </ul>
+              <div class="d-flex align-items-end flex-grow-1">
+                <form action="../search.html" role="search" class="ms-auto">
+                  <input type="text" class="form-control" aria-label="Search" placeholder="Search" name="q" id="tipue_search_input" autocomplete="off" required>
+                </form>
+              </div>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    </div>
+
+    <div class="container">
+  <div class="row">
+    <h1>test_dot2      <small>Program</small>
+      
+    </h1>
+      <div class="container p-2 mb-4 bg-light border rounded-3">
+    <div class="row align-items-center justify-content-between" id="info-bar">
+      <div class="col">
+        <ul class="list-inline" style="margin-bottom:0px;display:inline">
+            <li class="list-inline-item" id="meta-license"><i class="fa fa-legal"></i> BSD 3-Clause</li>
+
+            <li class="list-inline-item" id="statements"><i class="fa fa-list-ol"></i>
+              <a data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-html="true"
+                 title="42.2% of total for programs.">27 statements</a>
+            </li>
+
+            <li class="list-inline-item" id="source-file">
+              <i class="fa fa-code"></i>
+              <a href="../src/test2.f90"> Source File</a>
+            </li>
+        </ul>
+      </div>
+      <div class="col">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb justify-content-end mb-0">
+                <li class="breadcrumb-item"><a href='../sourcefile/test2.f90.html'>test2.f90</a></li>
+            <li class="breadcrumb-item active" aria-current="page">test_dot2</li>
+          </ol>
+        </nav>
+      </div>
+    </div>
+  </div>
+  <script>
+    // Enable Bootstrap tooltips
+    (function () {
+      const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+      const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
+    })();
+  </script>
+
+  </div>
+  
+  <div class="row">
+    <div class="col-md-3 hidden-xs hidden-sm visible-md visible-lg">
+      <div id="sidebar">
+      <h3>Contents</h3>
+  
+      <div class="card mb-4">
+      <a data-bs-toggle="collapse" href="#vars-0"
+         aria-expanded="false" aria-controls="vars-0">
+         <h4 class="card-header bg-primary text-white">Variables</h4>
+      </a>
+      <div id="vars-0" class="collapse">
+        <div class="list-group list-group-flush">
+            <a class="list-group-item" href="../program/test_dot2.html#variable-a~4">a</a>
+            <a class="list-group-item" href="../program/test_dot2.html#variable-a_ref">a_ref</a>
+            <a class="list-group-item" href="../program/test_dot2.html#variable-im~3">im</a>
+            <a class="list-group-item" href="../program/test_dot2.html#variable-m~2">m</a>
+            <a class="list-group-item" href="../program/test_dot2.html#variable-u~4">u</a>
+            <a class="list-group-item" href="../program/test_dot2.html#variable-ut">ut</a>
+            <a class="list-group-item" href="../program/test_dot2.html#variable-v~4">v</a>
+        </div>
+      </div>
+    </div>
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+    <div class="card card-primary">
+      <div class="card-header text-left"><h3 class="card-title">Source Code</h3></div>
+      <div class="list-group">
+        <a class="list-group-item" href="../program/test_dot2.html#src">test_dot2</a>
+      </div>
+    </div>
+
+
+  </div>
+
+    </div>
+    
+    <div class="col-md-9" id='text'>
+        <div class="card mb-4">
+      <h3 class="card-header card-title bg-light">Uses</h3>
+      <div class="card-body">
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ul class="list-inline">
+                  <li class="list-inline-item">kinds</li>
+                  <li class="list-inline-item">forunittest</li>
+                  <li class="list-inline-item"><a href='../module/fordot.html'>fordot</a></li>
+              </ul>
+            </li>
+            <li class="list-group-item">
+              <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 13.1.0 (20250701.1702)
+ -->
+<!-- Title: program~~test_dot2~~UsesGraph Pages: 1 -->
+<svg id="programtest_dot2UsesGraph" width="368pt" height="112pt"
+ viewBox="0.00 0.00 368.00 112.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_dot2~~UsesGraph" class="graph" transform="scale(1 1) rotate(0) translate(4 108.27)">
+<title>program~~test_dot2~~UsesGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-108.27 364.06,-108.27 364.06,4 -4,4"/>
+<!-- program~test_dot2 -->
+<g id="program~~test_dot2~~UsesGraph_node1" class="node">
+<title>program~test_dot2</title>
+<polygon fill="none" stroke="black" points="360.06,-64.27 299.79,-64.27 299.79,-40 360.06,-40 360.06,-64.27"/>
+<text xml:space="preserve" text-anchor="middle" x="329.92" y="-48.53" font-family="Helvetica,sans-Serif" font-size="10.50">test_dot2</text>
+</g>
+<!-- forunittest -->
+<g id="program~~test_dot2~~UsesGraph_node2" class="node">
+<title>forunittest</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="263.79,-104.27 197.52,-104.27 197.52,-80 263.79,-80 263.79,-104.27"/>
+<text xml:space="preserve" text-anchor="middle" x="230.65" y="-88.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">forunittest</text>
+</g>
+<!-- program~test_dot2&#45;&gt;forunittest -->
+<g id="program~~test_dot2~~UsesGraph_edge1" class="edge">
+<title>program~test_dot2&#45;&gt;forunittest</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M299.48,-64.24C291.13,-67.68 281.88,-71.48 272.97,-75.14"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="271.67,-71.9 263.75,-78.94 274.33,-78.37 271.67,-71.9"/>
+</g>
+<!-- kinds -->
+<g id="program~~test_dot2~~UsesGraph_node3" class="node">
+<title>kinds</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-44.27 0,-44.27 0,-20 54,-20 54,-44.27"/>
+<text xml:space="preserve" text-anchor="middle" x="27" y="-28.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">kinds</text>
+</g>
+<!-- program~test_dot2&#45;&gt;kinds -->
+<g id="program~~test_dot2~~UsesGraph_edge2" class="edge">
+<title>program~test_dot2&#45;&gt;kinds</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M299.46,-52.24C260.1,-52.36 188.18,-52.49 126.76,-52.13"/>
+</g>
+<!-- module~fordot -->
+<g id="program~~test_dot2~~UsesGraph_node4" class="node">
+<title>module~fordot</title>
+<g id="a_program~~test_dot2~~UsesGraph_node4"><a xlink:href="../module/fordot.html" xlink:title="fordot">
+<polygon fill="#337ab7" stroke="#337ab7" points="257.65,-24.27 203.65,-24.27 203.65,0 257.65,0 257.65,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="230.65" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot</text>
+</a>
+</g>
+</g>
+<!-- program~test_dot2&#45;&gt;module~fordot -->
+<g id="program~~test_dot2~~UsesGraph_edge3" class="edge">
+<title>program~test_dot2&#45;&gt;module~fordot</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M299.48,-40.03C289.68,-36 278.65,-31.46 268.38,-27.24"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="270.01,-24.12 259.43,-23.56 267.34,-30.6 270.01,-24.12"/>
+</g>
+<!-- module~fordot&#45;&gt;kinds -->
+<g id="program~~test_dot2~~UsesGraph_edge4" class="edge">
+<title>module~fordot&#45;&gt;kinds</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M210.41,-24.64C190.36,-36.44 157.62,-52.31 126.76,-52.13"/>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M124.76,-52.13C104.92,-52.02 83.26,-47.93 65.47,-43.47"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="66.42,-40.11 55.86,-40.92 64.62,-46.87 66.42,-40.11"/>
+</g>
+<!-- module~fordot_opts -->
+<g id="program~~test_dot2~~UsesGraph_node5" class="node">
+<title>module~fordot_opts</title>
+<g id="a_program~~test_dot2~~UsesGraph_node5"><a xlink:href="../module/fordot_opts.html" xlink:title="fordot_opts">
+<polygon fill="#337ab7" stroke="#337ab7" points="161.52,-24.27 90,-24.27 90,0 161.52,0 161.52,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="125.76" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">fordot_opts</text>
+</a>
+</g>
+</g>
+<!-- module~fordot&#45;&gt;module~fordot_opts -->
+<g id="program~~test_dot2~~UsesGraph_edge5" class="edge">
+<title>module~fordot&#45;&gt;module~fordot_opts</title>
+<path fill="none" stroke="#0000ff" stroke-dasharray="5,2" d="M203.16,-12.13C193.99,-12.13 183.42,-12.13 173.12,-12.13"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="173.22,-8.64 163.22,-12.14 173.22,-15.64 173.22,-8.64"/>
+</g>
+<!-- module~fordot_opts&#45;&gt;kinds -->
+<g id="program~~test_dot2~~UsesGraph_edge6" class="edge">
+<title>module~fordot_opts&#45;&gt;kinds</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M89.55,-19.41C81.71,-21.03 73.37,-22.76 65.44,-24.4"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="64.8,-20.96 55.71,-26.41 66.21,-27.81 64.8,-20.96"/>
+</g>
+</g>
+</svg>
+</div>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#UsesGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="UsesGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 13.1.0 (20250701.1702)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="511pt" height="32pt"
+ viewBox="0.00 0.00 511.00 32.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(1 1) rotate(0) translate(4 28.27)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28.27 506.88,-28.27 506.88,4 -4,4"/>
+<!-- Module -->
+<g id="node1" class="node">
+<title>Module</title>
+<polygon fill="#337ab7" stroke="#337ab7" points="54,-24.27 0,-24.27 0,0 54,0 54,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="27" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Module</text>
+</g>
+<!-- Submodule -->
+<g id="node2" class="node">
+<title>Submodule</title>
+<polygon fill="#5bc0de" stroke="#5bc0de" points="144.13,-24.27 71.87,-24.27 71.87,0 144.13,0 144.13,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="108" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Submodule</text>
+</g>
+<!-- Subroutine -->
+<g id="node3" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="231.63,-24.27 162.37,-24.27 162.37,0 231.63,0 231.63,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="197" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node4" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="306.26,-24.27 249.74,-24.27 249.74,0 306.26,0 306.26,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="278" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Program -->
+<g id="node5" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="381.26,-24.27 324.74,-24.27 324.74,0 381.26,0 381.26,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="353" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node6" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="502.88,-24.27 399.12,-24.27 399.12,0 502.88,0 502.88,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="451" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a submodule to the (sub)module which it is
+descended from. Dashed arrows point from a module or program unit to 
+modules which it uses.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+            </li>
+        </ul>
+      </div>
+    </div>
+
+    
+    <br>
+    <div class="card">
+      <div class="card-header">
+  <h3 class="card-title">Calls</h3>
+      </div>
+      <div class="card-body">
+  <div class="depgraph"><?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 13.1.0 (20250701.1702)
+ -->
+<!-- Title: program~~test_dot2~~CallsGraph Pages: 1 -->
+<svg id="programtest_dot2CallsGraph" width="641pt" height="117pt"
+ viewBox="0.00 0.00 641.00 117.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="program~~test_dot2~~CallsGraph" class="graph" transform="scale(0.739672 0.739672) rotate(0) translate(4 154.27)">
+<title>program~~test_dot2~~CallsGraph</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-154.27 862.6,-154.27 862.6,4 -4,4"/>
+<!-- program~test_dot2 -->
+<g id="program~~test_dot2~~CallsGraph_node1" class="node">
+<title>program~test_dot2</title>
+<polygon fill="none" stroke="black" points="60.27,-87.27 0,-87.27 0,-63 60.27,-63 60.27,-87.27"/>
+<text xml:space="preserve" text-anchor="middle" x="30.13" y="-71.54" font-family="Helvetica,sans-Serif" font-size="10.50">test_dot2</text>
+</g>
+<!-- check -->
+<g id="program~~test_dot2~~CallsGraph_node2" class="node">
+<title>check</title>
+<polygon fill="#777777" stroke="#777777" points="160.53,-108.27 106.53,-108.27 106.53,-84 160.53,-84 160.53,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="133.53" y="-92.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">check</text>
+</g>
+<!-- program~test_dot2&#45;&gt;check -->
+<g id="program~~test_dot2~~CallsGraph_edge1" class="edge">
+<title>program~test_dot2&#45;&gt;check</title>
+<path fill="none" stroke="#ff0000" d="M60.74,-81.27C71.52,-83.5 83.85,-86.05 95.22,-88.41"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="94.19,-91.77 104.69,-90.37 95.61,-84.91 94.19,-91.77"/>
+</g>
+<!-- interface~dot_product -->
+<g id="program~~test_dot2~~CallsGraph_node3" class="node">
+<title>interface~dot_product</title>
+<g id="a_program~~test_dot2~~CallsGraph_node3"><a xlink:href="../interface/dot_product.html" xlink:title="dot_product">
+<polygon fill="#a7506f" stroke="#a7506f" points="170.79,-66.27 96.27,-66.27 96.27,-42 170.79,-42 170.79,-66.27"/>
+<text xml:space="preserve" text-anchor="middle" x="133.53" y="-50.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot_product</text>
+</a>
+</g>
+</g>
+<!-- program~test_dot2&#45;&gt;interface~dot_product -->
+<g id="program~~test_dot2~~CallsGraph_edge2" class="edge">
+<title>program~test_dot2&#45;&gt;interface~dot_product</title>
+<path fill="none" stroke="#ff0000" d="M60.74,-69C68.29,-67.44 76.61,-65.72 84.82,-64.02"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="85.3,-67.49 94.39,-62.04 83.88,-60.64 85.3,-67.49"/>
+</g>
+<!-- proc~dot_r0r1r1_rel -->
+<g id="program~~test_dot2~~CallsGraph_node4" class="node">
+<title>proc~dot_r0r1r1_rel</title>
+<g id="a_program~~test_dot2~~CallsGraph_node4"><a xlink:href="../proc/dot_r0r1r1_rel.html" xlink:title="dot_R0R1R1_rel">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="325.56,-108.27 230.04,-108.27 230.04,-84 325.56,-84 325.56,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="277.8" y="-92.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot_R0R1R1_rel</text>
+</a>
+</g>
+</g>
+<!-- interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel -->
+<g id="program~~test_dot2~~CallsGraph_edge3" class="edge">
+<title>interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M171.17,-64.95C187.12,-69.66 206.13,-75.27 223.6,-80.43"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="222.2,-83.67 232.78,-83.14 224.18,-76.95 222.2,-83.67"/>
+</g>
+<!-- proc~dot_r0r1r1_rel_block -->
+<g id="program~~test_dot2~~CallsGraph_node5" class="node">
+<title>proc~dot_r0r1r1_rel_block</title>
+<g id="a_program~~test_dot2~~CallsGraph_node5"><a xlink:href="../proc/dot_r0r1r1_rel_block.html" xlink:title="dot_R0R1R1_rel_block">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="342.43,-24.27 213.16,-24.27 213.16,0 342.43,0 342.43,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="277.8" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot_R0R1R1_rel_block</text>
+</a>
+</g>
+</g>
+<!-- interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_block -->
+<g id="program~~test_dot2~~CallsGraph_edge4" class="edge">
+<title>interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_block</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M171.17,-43.32C187.12,-38.61 206.13,-33 223.6,-27.84"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="224.18,-31.32 232.78,-25.13 222.2,-24.6 224.18,-31.32"/>
+</g>
+<!-- proc~dot_r0r1r1_rel_coarray -->
+<g id="program~~test_dot2~~CallsGraph_node6" class="node">
+<title>proc~dot_r0r1r1_rel_coarray</title>
+<g id="a_program~~test_dot2~~CallsGraph_node6"><a xlink:href="../proc/dot_r0r1r1_rel_coarray.html" xlink:title="dot_R0R1R1_rel_coarray">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="348.81,-66.27 206.79,-66.27 206.79,-42 348.81,-42 348.81,-66.27"/>
+<text xml:space="preserve" text-anchor="middle" x="277.8" y="-50.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot_R0R1R1_rel_coarray</text>
+</a>
+</g>
+</g>
+<!-- interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_coarray -->
+<g id="program~~test_dot2~~CallsGraph_edge5" class="edge">
+<title>interface~dot_product&#45;&gt;proc~dot_r0r1r1_rel_coarray</title>
+<path fill="none" stroke="#00ffff" stroke-dasharray="5,2" d="M171.17,-54.13C178.58,-54.13 186.66,-54.13 194.93,-54.13"/>
+<polygon fill="#00ffff" stroke="#00ffff" points="194.78,-57.64 204.78,-54.14 194.78,-50.64 194.78,-57.64"/>
+</g>
+<!-- interface~dot_opts -->
+<g id="program~~test_dot2~~CallsGraph_node7" class="node">
+<title>interface~dot_opts</title>
+<g id="a_program~~test_dot2~~CallsGraph_node7"><a xlink:href="../interface/dot_opts.html" xlink:title="dot_opts">
+<polygon fill="#a7506f" stroke="#a7506f" points="480.33,-108.27 423.81,-108.27 423.81,-84 480.33,-84 480.33,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="452.07" y="-92.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot_opts</text>
+</a>
+</g>
+</g>
+<!-- proc~dot_r0r1r1_rel&#45;&gt;interface~dot_opts -->
+<g id="program~~test_dot2~~CallsGraph_edge6" class="edge">
+<title>proc~dot_r0r1r1_rel&#45;&gt;interface~dot_opts</title>
+<path fill="none" stroke="#ff0000" d="M325.87,-96.14C352.88,-96.14 386.38,-96.14 411.93,-96.14"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="411.9,-99.64 421.9,-96.14 411.9,-92.64 411.9,-99.64"/>
+</g>
+<!-- proc~compute_block_ranges -->
+<g id="program~~test_dot2~~CallsGraph_node8" class="node">
+<title>proc~compute_block_ranges</title>
+<g id="a_program~~test_dot2~~CallsGraph_node8"><a xlink:href="../proc/compute_block_ranges.html" xlink:title="compute_block_ranges">
+<polygon fill="#d9534f" stroke="#d9534f" points="519.33,-66.27 384.81,-66.27 384.81,-42 519.33,-42 519.33,-66.27"/>
+<text xml:space="preserve" text-anchor="middle" x="452.07" y="-50.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">compute_block_ranges</text>
+</a>
+</g>
+</g>
+<!-- proc~dot_r0r1r1_rel_block&#45;&gt;proc~compute_block_ranges -->
+<g id="program~~test_dot2~~CallsGraph_edge7" class="edge">
+<title>proc~dot_r0r1r1_rel_block&#45;&gt;proc~compute_block_ranges</title>
+<path fill="none" stroke="#00ff00" d="M330.49,-24.74C348.71,-29.18 369.4,-34.22 388.44,-38.86"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="387.4,-42.22 397.95,-41.18 389.06,-35.41 387.4,-42.22"/>
+</g>
+<!-- reduce -->
+<g id="program~~test_dot2~~CallsGraph_node9" class="node">
+<title>reduce</title>
+<polygon fill="#777777" stroke="#777777" points="479.07,-24.27 425.07,-24.27 425.07,0 479.07,0 479.07,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="452.07" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">reduce</text>
+</g>
+<!-- proc~dot_r0r1r1_rel_block&#45;&gt;reduce -->
+<g id="program~~test_dot2~~CallsGraph_edge8" class="edge">
+<title>proc~dot_r0r1r1_rel_block&#45;&gt;reduce</title>
+<path fill="none" stroke="#00ff00" d="M342.46,-12.13C366.45,-12.13 392.93,-12.13 413.75,-12.13"/>
+<polygon fill="#00ff00" stroke="#00ff00" points="413.46,-15.64 423.46,-12.14 413.46,-8.64 413.46,-15.64"/>
+</g>
+<!-- proc~dot_r0r1r1_rel_coarray&#45;&gt;proc~compute_block_ranges -->
+<g id="program~~test_dot2~~CallsGraph_edge9" class="edge">
+<title>proc~dot_r0r1r1_rel_coarray&#45;&gt;proc~compute_block_ranges</title>
+<path fill="none" stroke="#0000ff" d="M348.87,-54.13C356.85,-54.13 365.01,-54.13 373.09,-54.13"/>
+<polygon fill="#0000ff" stroke="#0000ff" points="372.89,-57.64 382.89,-54.14 372.89,-50.64 372.89,-57.64"/>
+</g>
+<!-- proc~dot_r0r1r1_rel_opts -->
+<g id="program~~test_dot2~~CallsGraph_node10" class="node">
+<title>proc~dot_r0r1r1_rel_opts</title>
+<g id="a_program~~test_dot2~~CallsGraph_node10"><a xlink:href="../proc/dot_r0r1r1_rel_opts.html" xlink:title="dot_R0R1R1_rel_opts">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="678.6,-108.27 555.33,-108.27 555.33,-84 678.6,-84 678.6,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="616.96" y="-92.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot_R0R1R1_rel_opts</text>
+</a>
+</g>
+</g>
+<!-- interface~dot_opts&#45;&gt;proc~dot_r0r1r1_rel_opts -->
+<g id="program~~test_dot2~~CallsGraph_edge10" class="edge">
+<title>interface~dot_opts&#45;&gt;proc~dot_r0r1r1_rel_opts</title>
+<path fill="none" stroke="#ff0000" stroke-dasharray="5,2" d="M480.7,-96.14C498.1,-96.14 521.42,-96.14 543.79,-96.14"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="543.51,-99.64 553.51,-96.14 543.51,-92.64 543.51,-99.64"/>
+</g>
+<!-- proc~md_2 -->
+<g id="program~~test_dot2~~CallsGraph_node11" class="node">
+<title>proc~md_2</title>
+<g id="a_program~~test_dot2~~CallsGraph_node11"><a xlink:href="../proc/md_2.html" xlink:title="md_2">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="768.6,-150.27 714.6,-150.27 714.6,-126 768.6,-126 768.6,-150.27"/>
+<text xml:space="preserve" text-anchor="middle" x="741.6" y="-134.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">md_2</text>
+</a>
+</g>
+</g>
+<!-- proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_2 -->
+<g id="program~~test_dot2~~CallsGraph_edge11" class="edge">
+<title>proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_2</title>
+<path fill="none" stroke="#ff0000" d="M654.76,-108.74C670.2,-114.03 688.13,-120.16 703.59,-125.46"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="702.32,-128.72 712.92,-128.65 704.59,-122.1 702.32,-128.72"/>
+</g>
+<!-- proc~md_3 -->
+<g id="program~~test_dot2~~CallsGraph_node12" class="node">
+<title>proc~md_3</title>
+<g id="a_program~~test_dot2~~CallsGraph_node12"><a xlink:href="../proc/md_3.html" xlink:title="md_3">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="768.6,-108.27 714.6,-108.27 714.6,-84 768.6,-84 768.6,-108.27"/>
+<text xml:space="preserve" text-anchor="middle" x="741.6" y="-92.54" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">md_3</text>
+</a>
+</g>
+</g>
+<!-- proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_3 -->
+<g id="program~~test_dot2~~CallsGraph_edge12" class="edge">
+<title>proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_3</title>
+<path fill="none" stroke="#ff0000" d="M678.92,-96.14C687.05,-96.14 695.18,-96.14 702.76,-96.14"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="702.6,-99.64 712.6,-96.14 702.6,-92.64 702.6,-99.64"/>
+</g>
+<!-- proc~md_4 -->
+<g id="program~~test_dot2~~CallsGraph_node13" class="node">
+<title>proc~md_4</title>
+<g id="a_program~~test_dot2~~CallsGraph_node13"><a xlink:href="../proc/md_4.html" xlink:title="md_4">
+<polygon fill="#d94e8f" stroke="#d94e8f" points="768.6,-66.27 714.6,-66.27 714.6,-42 768.6,-42 768.6,-66.27"/>
+<text xml:space="preserve" text-anchor="middle" x="741.6" y="-50.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">md_4</text>
+</a>
+</g>
+</g>
+<!-- proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_4 -->
+<g id="program~~test_dot2~~CallsGraph_edge13" class="edge">
+<title>proc~dot_r0r1r1_rel_opts&#45;&gt;proc~md_4</title>
+<path fill="none" stroke="#ff0000" d="M654.76,-83.53C670.2,-78.24 688.13,-72.11 703.59,-66.81"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="704.59,-70.17 712.92,-63.62 702.32,-63.55 704.59,-70.17"/>
+</g>
+<!-- interface~dot -->
+<g id="program~~test_dot2~~CallsGraph_node14" class="node">
+<title>interface~dot</title>
+<g id="a_program~~test_dot2~~CallsGraph_node14"><a xlink:href="../interface/dot.html" xlink:title="dot">
+<polygon fill="#a7506f" stroke="#a7506f" points="858.6,-150.27 804.6,-150.27 804.6,-126 858.6,-126 858.6,-150.27"/>
+<text xml:space="preserve" text-anchor="middle" x="831.6" y="-134.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">dot</text>
+</a>
+</g>
+</g>
+<!-- proc~md_2&#45;&gt;interface~dot -->
+<g id="program~~test_dot2~~CallsGraph_edge14" class="edge">
+<title>proc~md_2&#45;&gt;interface~dot</title>
+<path fill="none" stroke="#ff0000" d="M769,-138.13C776.49,-138.13 784.78,-138.13 792.8,-138.13"/>
+<polygon fill="#ff0000" stroke="#ff0000" points="792.7,-141.64 802.7,-138.14 792.7,-134.64 792.7,-141.64"/>
+</g>
+</g>
+</svg>
+</div>                <script>
+                  var panprogramtest_dot2CallsGraph = svgPanZoom('#programtest_dot2CallsGraph',
+                    {zoomEnabled: true, controlIconsEnabled: true, fit: true, center: true,}
+                  );
+                </script>          <div>
+            <a type="button" class="graph-help" data-bs-toggle="modal" href="#CallsGraph-help-text">Help</a>
+          </div>
+          <div class="modal fade" id="CallsGraph-help-text" tabindex="-1" role="dialog">
+            <div class="modal-dialog modal-lg" role="document">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h4 class="modal-title" id="-graph-help-label">Graph Key</h4>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+<p>Nodes of different colours represent the following: </p>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN"
+ "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<!-- Generated by graphviz version 13.1.0 (20250701.1702)
+ -->
+<!-- Title: Graph Key Pages: 1 -->
+<svg width="641pt" height="28pt"
+ viewBox="0.00 0.00 641.00 28.00" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<g id="graph0" class="graph" transform="scale(0.873868 0.873868) rotate(0) translate(4 28.27)">
+<title>Graph Key</title>
+<polygon fill="white" stroke="none" points="-4,4 -4,-28.27 729.52,-28.27 729.52,4 -4,4"/>
+<!-- Subroutine -->
+<g id="node1" class="node">
+<title>Subroutine</title>
+<polygon fill="#d9534f" stroke="#d9534f" points="69.27,-24.27 0,-24.27 0,0 69.27,0 69.27,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="34.63" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Subroutine</text>
+</g>
+<!-- Function -->
+<g id="node2" class="node">
+<title>Function</title>
+<polygon fill="#d94e8f" stroke="#d94e8f" points="143.89,-24.27 87.38,-24.27 87.38,0 143.89,0 143.89,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="115.63" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Function</text>
+</g>
+<!-- Interface -->
+<g id="node3" class="node">
+<title>Interface</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="221.39,-24.27 161.88,-24.27 161.88,0 221.39,0 221.39,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="191.63" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Interface</text>
+</g>
+<!-- Type Bound Procedure -->
+<g id="node4" class="node">
+<title>Type Bound Procedure</title>
+<polygon fill="#a7506f" stroke="#a7506f" points="368.27,-24.27 239,-24.27 239,0 368.27,0 368.27,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="303.63" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Type Bound Procedure</text>
+</g>
+<!-- Unknown Procedure Type -->
+<g id="node5" class="node">
+<title>Unknown Procedure Type</title>
+<polygon fill="#777777" stroke="#777777" points="529.39,-24.27 385.88,-24.27 385.88,0 529.39,0 529.39,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="457.63" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Unknown Procedure Type</text>
+</g>
+<!-- Program -->
+<g id="node6" class="node">
+<title>Program</title>
+<polygon fill="#f0ad4e" stroke="#f0ad4e" points="603.89,-24.27 547.38,-24.27 547.38,0 603.89,0 603.89,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="575.63" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50" fill="white">Program</text>
+</g>
+<!-- This Page&#39;s Entity -->
+<g id="node7" class="node">
+<title>This Page&#39;s Entity</title>
+<polygon fill="none" stroke="black" points="725.52,-24.27 621.75,-24.27 621.75,0 725.52,0 725.52,-24.27"/>
+<text xml:space="preserve" text-anchor="middle" x="673.63" y="-8.53" font-family="Helvetica,sans-Serif" font-size="10.50">This Page&#39;s Entity</text>
+</g>
+</g>
+</svg>
+
+<p>Solid arrows point from a procedure to one which it calls. Dashed 
+arrows point from an interface to procedures which implement that interface.
+This could include the module procedures in a generic interface or the
+implementation in a submodule of an interface in a parent module.
+</p>
+ Where possible, edges connecting nodes are
+given different colours to make them easier to distinguish in
+large graphs.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+<br>
+
+    <section>
+    <h2>Variables</h2>
+      <table class="table table-striped varlist">
+    <thead>
+      <tr>
+        <th scope="col">Type</th>
+        <th scope="col">Attributes</th>
+        <th scope="col"></th>
+        <th scope="col">Name</th>
+<th></th><th scope="col">Initial</th>        <th scope="col"></th>
+    </thead>
+    <tbody>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a~4"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>a</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-a_ref"></span>
+              real(kind=rk)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>a_ref</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-im~3"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>im</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-m~2"></span>
+              integer
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>m</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-u~4"></span>
+              real(kind=rk),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>u</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-ut"></span>
+              type(unit_test)
+            </td>
+            <td>
+              
+            </td>
+            <td>::</td>
+            <td><strong>ut</strong></td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+        <tr>
+            <td>
+              <span class="anchor" id="variable-v~4"></span>
+              real(kind=rk),
+            </td>
+            <td>
+              allocatable
+            </td>
+            <td>::</td>
+            <td><strong>v</strong>(:)</td>
+                <td></td>
+                <td></td>
+            <td>
+                
+            </td>
+        </tr>
+    </tbody>
+  </table>
+
+    </section>
+    <br>
+    
+    
+    
+
+    
+
+
+    
+
+    <section>
+    <h2 id="src">Source Code</h2>
+    <div class="hl codehilite"><pre><span></span><span class="k">program </span><span class="n">test_dot2</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">use </span><span class="n">kinds</span><span class="w"></span>
+<span class="w">   </span><span class="k">use </span><span class="n">fordot</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">fdot_product</span><span class="w"> </span><span class="o">=&gt;</span><span class="w"> </span><span class="nb">dot_product</span><span class="w"> </span><span class="c">! rename dot_product to fdot_product to avoid overloading</span>
+<span class="w">   </span><span class="k">use </span><span class="n">forunittest</span><span class="p">,</span><span class="w"> </span><span class="k">only</span><span class="p">:</span><span class="w"> </span><span class="n">unit_test</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">implicit none</span>
+
+<span class="k">   </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">),</span><span class="w"> </span><span class="k">allocatable</span><span class="w"> </span><span class="kd">::</span><span class="w"> </span><span class="n">u</span><span class="p">(:),</span><span class="w"> </span><span class="n">v</span><span class="p">(:)</span><span class="w"></span>
+<span class="w">   </span><span class="kt">real</span><span class="p">(</span><span class="n">rk</span><span class="p">)</span><span class="w">              </span><span class="kd">::</span><span class="w"> </span><span class="n">a_ref</span><span class="p">,</span><span class="w"> </span><span class="n">a</span><span class="w"></span>
+<span class="w">   </span><span class="kt">integer</span><span class="w">               </span><span class="kd">::</span><span class="w"> </span><span class="n">m</span><span class="p">,</span><span class="w"> </span><span class="n">im</span><span class="w"></span>
+<span class="w">   </span><span class="k">type</span><span class="p">(</span><span class="n">unit_test</span><span class="p">)</span><span class="w">       </span><span class="kd">::</span><span class="w"> </span><span class="n">ut</span><span class="w"></span>
+
+<span class="cp">#if defined(USE_COARRAY)</span>
+<span class="w">   </span><span class="n">im</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">this_image</span><span class="p">()</span><span class="w"></span>
+<span class="cp">#else</span>
+<span class="w">   </span><span class="n">im</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">1</span><span class="w"></span>
+<span class="cp">#endif</span>
+
+<span class="w">   </span><span class="c">! a = u(m).v(n)</span>
+<span class="w">   </span><span class="n">m</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="mi">500</span><span class="w"></span>
+
+<span class="w">   </span><span class="k">allocate</span><span class="p">(</span><span class="n">u</span><span class="p">(</span><span class="n">m</span><span class="p">),</span><span class="n">v</span><span class="p">(</span><span class="n">m</span><span class="p">))</span><span class="w"></span>
+<span class="w">   </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">u</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">call </span><span class="nb">random_number</span><span class="p">(</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="n">u</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">u</span><span class="o">*</span><span class="mi">10</span><span class="mf">0.0_rk</span><span class="w"></span>
+<span class="w">   </span><span class="n">v</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">v</span><span class="o">*</span><span class="mi">10</span><span class="mf">0.0_rk</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">a_ref</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dot_product</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fdot_product</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">coarray</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="n">option</span><span class="o">=</span><span class="s1">&#39;m1&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">im</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ut</span><span class="p">%</span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a_ref</span><span class="p">,</span><span class="w"> </span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-5_rk</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;test_dot2.1&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fdot_product</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">coarray</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="n">option</span><span class="o">=</span><span class="s1">&#39;m2&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">im</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ut</span><span class="p">%</span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a_ref</span><span class="p">,</span><span class="w"> </span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-5_rk</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;test_dot2.2&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fdot_product</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">coarray</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="n">option</span><span class="o">=</span><span class="s1">&#39;m3&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">im</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ut</span><span class="p">%</span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a_ref</span><span class="p">,</span><span class="w"> </span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-5_rk</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;test_dot2.3&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="w">   </span><span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="n">fdot_product</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="w"> </span><span class="n">coarray</span><span class="o">=</span><span class="p">.</span><span class="n">true</span><span class="p">.,</span><span class="w"> </span><span class="n">option</span><span class="o">=</span><span class="s1">&#39;m4&#39;</span><span class="p">)</span><span class="w"></span>
+<span class="w">   </span><span class="k">if</span><span class="w"> </span><span class="p">(</span><span class="n">im</span><span class="o">==</span><span class="mi">1</span><span class="p">)</span><span class="w"> </span><span class="k">call </span><span class="n">ut</span><span class="p">%</span><span class="n">check</span><span class="p">(</span><span class="n">a</span><span class="p">,</span><span class="w"> </span><span class="n">a_ref</span><span class="p">,</span><span class="w"> </span><span class="n">tol</span><span class="o">=</span><span class="mf">1e-5_rk</span><span class="p">,</span><span class="w"> </span><span class="n">msg</span><span class="o">=</span><span class="s1">&#39;test_dot2.4&#39;</span><span class="p">)</span><span class="w"></span>
+
+<span class="k">end program </span><span class="n">test_dot2</span><span class="w"></span>
+</pre></div>
+
+    </section>
+    
+    </div>
+  </div>
+
+      <hr>
+    </div> <!-- /container -->
+    <footer>
+      <div class="container">
+        <div class="row justify-content-between">
+          <div class="col">
+            <p>
+              ForDot
+ was developed by Seyed Ali Ghasemi<br>              &copy; 2023-2025 BSD 3-Clause
+</p>
+          </div>
+          <div class="col">
+            <p class="text-end">
+              Documentation generated by
+              <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
+ on 2025-07-17T08:23:45.452237+0000             </p>
+          </div>
+        </div>
+        <br>
+      </div> <!-- /container -->
+    </footer>
+  </body>
+</html>

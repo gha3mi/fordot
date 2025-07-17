@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -10,14 +12,29 @@
 
     <title> ForDot </title>
 
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
-          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link href="./css/pygments.css" rel="stylesheet">
-    <link href="./css/font-awesome.min.css" rel="stylesheet">
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <!-- Font Awesome -->
+    <link href="./css/fontawesome.min.css" rel="stylesheet">
+    <link href="./css/brands.min.css" rel="stylesheet">
+    <link href="./css/regular.min.css" rel="stylesheet">
+    <link href="./css/solid.min.css" rel="stylesheet">
+    <link href="./css/v4-font-face.min.css" rel="stylesheet">
+    <link href="./css/v4-shims.min.css" rel="stylesheet">
+    <!-- MathJax -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        TeX: { equationNumbers: { autoNumber: "AMS" } }
+      });
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@2.7.9/MathJax.js?config=TeX-AMS-MML_HTMLorMML" async
+            integrity="sha256-DViIOMYdwlM/axqoGDPeUyf0urLoHMN4QACBKyB58Uw=" crossorigin="anonymous"></script>
+    <!-- Other scripts and stylesheets -->
     <link href="./css/local.css" rel="stylesheet">
-      <link  href="./tipuesearch/tipuesearch.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <link href="./css/pygments.css" rel="stylesheet">
     <script src="./js/svg-pan-zoom.min.js"></script>
   </head>
 
@@ -44,6 +61,9 @@
                 <li class="nav-item">
                   <a class="nav-link" href="./lists/procedures.html">Procedures</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./lists/programs.html">Programs</a>
+                </li>
             </ul>
               <div class="d-flex align-items-end flex-grow-1">
                 <form action="./search.html" role="search" class="ms-auto">
@@ -56,14 +76,18 @@
     </div>
 
     <div class="container">
-      <!-- Main component for a primary marketing message or call to action -->
-      <div class="p-5 mb-4 bg-light border rounded-3" id="jumbotron">
+  <!-- Main component for a primary marketing message or call to action -->
+    <div class="p-5 mb-4 bg-light border rounded-3" id="jumbotron">
+      
+        <p> Find us on&hellip;</p>
+      <p>
+        <a class="btn btn-lg btn-primary" href="https://github.com/gha3mi/fordot" role="button">GitHub</a>
         
-	<p> Find us on&hellip;</p>
-        <p>
-          <a class="btn btn-lg btn-primary" href="https://github.com/gha3mi/fordot" role="button">GitHub</a>
-        </p>
-      </div>
+        
+        
+        
+      </p>
+    </div>
 
       <div class="row" id='text'>
         <div class=col-md-8>
@@ -76,9 +100,9 @@
 <a href="https://github.com/gha3mi/fordot/actions/workflows/CI_test.yml"><img alt="Build" src="https://github.com/gha3mi/fordot/actions/workflows/CI_test.yml/badge.svg"></a></p>
 <p><strong>ForDot</strong>: A Fortran library that overloads the <code>dot_product</code> function to enable efficient dot product with/without coarray.</p>
 <h2>Usage</h2>
-<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fordot</span>
+<div class="codehilite"><pre><span></span><code><span class="k">use </span><span class="n">fordot</span><span class="w"></span>
 
-<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dot_product</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">coarray</span><span class="p">,</span><span class="n">option</span><span class="p">,</span><span class="n">nblock</span><span class="p">)</span>
+<span class="n">a</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">dot_product</span><span class="p">(</span><span class="n">u</span><span class="p">,</span><span class="n">v</span><span class="p">,</span><span class="n">coarray</span><span class="p">,</span><span class="n">option</span><span class="p">,</span><span class="n">nblock</span><span class="p">)</span><span class="w"></span>
 </code></pre></div>
 
 <ul>
@@ -100,18 +124,18 @@
 <h2>fpm Dependency</h2>
 <p>If you want to use <code>ForDot</code> as a dependency in your own fpm project,
 you can easily include it by adding the following line to your <code>fpm.toml</code> file:</p>
-<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span>
-<span class="n">fordot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">git</span><span class="p">=</span><span class="s2">&quot;https://github.com/gha3mi/fordot.git&quot;</span><span class="p">}</span>
+<div class="codehilite"><pre><span></span><code><span class="k">[dependencies]</span><span class="w"></span>
+<span class="n">fordot</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span><span class="n">git</span><span class="o">=</span><span class="s">&quot;https://github.com/gha3mi/fordot.git&quot;</span><span class="p">}</span><span class="w"></span>
 </code></pre></div>
 
 <h2>Runing Tests</h2>
 <p>Execute the following commands to run tests with specific compilers:</p>
-<div class="codehilite"><pre><span></span><code>fpm<span class="w"> </span>@&lt;compiler&gt;-test
+<div class="codehilite"><pre><span></span><code>fpm @&lt;compiler&gt;-test
 </code></pre></div>
 
 <p><code>compiler: ifx, ifort, gfortran, nvfortran</code></p>
 <p>For coarray testing use:</p>
-<div class="codehilite"><pre><span></span><code>fpm<span class="w"> </span>@&lt;compiler&gt;-test-coarray
+<div class="codehilite"><pre><span></span><code>fpm @&lt;compiler&gt;-test-coarray
 </code></pre></div>
 
 <p><code>compiler: ifx, ifort</code></p>
@@ -124,7 +148,7 @@ you can easily include it by adding the following line to your <code>fpm.toml</c
 To generate the API documentation for <code>ForDot</code> using
 <a href="https://github.com/Fortran-FOSS-Programmers/ford">ford</a> run the following
 command:</p>
-<div class="codehilite"><pre><span></span><code>ford<span class="w"> </span>ford.yml
+<div class="codehilite"><pre><span></span><code>ford ford.yml
 </code></pre></div>
 
 <h2>Contributing</h2>
@@ -132,26 +156,33 @@ command:</p>
 If you find any issues or would like to suggest improvements, please open an issue.</p>
 <h2>Citation</h2>
 <p>If you use <code>ForDot</code> in your work, please cite it using the following DOI:</p>
-<div class="codehilite"><pre><span></span><code><span class="nv">@software</span><span class="err">{</span><span class="n">ghasemi_2024_10594971</span><span class="p">,</span>
-<span class="w">  </span><span class="n">author</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">Ghasemi</span><span class="p">,</span><span class="w"> </span><span class="n">Seyed</span><span class="w"> </span><span class="n">Ali</span><span class="err">}</span><span class="p">,</span>
-<span class="w">  </span><span class="n">title</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">gha3mi</span><span class="o">/</span><span class="nl">fordot</span><span class="p">:</span><span class="w"> </span><span class="n">v0</span><span class="mf">.1.0</span><span class="err">}</span><span class="p">,</span>
-<span class="w">  </span><span class="nf">month</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">jan</span><span class="p">,</span>
-<span class="w">  </span><span class="nf">year</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">2024</span><span class="p">,</span>
-<span class="w">  </span><span class="n">publisher</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">Zenodo</span><span class="err">}</span><span class="p">,</span>
-<span class="w">  </span><span class="n">version</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">v0</span><span class="mf">.1.0</span><span class="err">}</span><span class="p">,</span>
-<span class="w">  </span><span class="n">doi</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.10594971</span><span class="err">}</span><span class="p">,</span>
-<span class="w">  </span><span class="n">url</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.10594971</span><span class="err">}</span>
-<span class="err">}</span>
+<div class="codehilite"><pre><span></span><code><span class="nv">@software</span><span class="err">{</span><span class="n">ghasemi_2024_10594971</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">author</span><span class="w">       </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">Ghasemi</span><span class="p">,</span><span class="w"> </span><span class="n">Seyed</span><span class="w"> </span><span class="n">Ali</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">title</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">gha3mi</span><span class="o">/</span><span class="nl">fordot</span><span class="p">:</span><span class="w"> </span><span class="n">v0</span><span class="mf">.1.0</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nf">month</span><span class="w">        </span><span class="o">=</span><span class="w"> </span><span class="n">jan</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="nf">year</span><span class="w">         </span><span class="o">=</span><span class="w"> </span><span class="mi">2024</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">publisher</span><span class="w">    </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">Zenodo</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">version</span><span class="w">      </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="n">v0</span><span class="mf">.1.0</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">doi</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.10594971</span><span class="err">}</span><span class="p">,</span><span class="w"></span>
+<span class="w">  </span><span class="n">url</span><span class="w">          </span><span class="o">=</span><span class="w"> </span><span class="err">{</span><span class="nl">https</span><span class="p">:</span><span class="o">//</span><span class="n">doi</span><span class="p">.</span><span class="n">org</span><span class="o">/</span><span class="mf">10.5281</span><span class="o">/</span><span class="n">zenodo</span><span class="mf">.10594971</span><span class="err">}</span><span class="w"></span>
+<span class="err">}</span><span class="w"></span>
 </code></pre></div>
         </div>
           <div class="col-md-4">
-	        <div class="card card-body bg-light">
+            <div class="card card-body bg-light">
               <h2 class="card-title">Developer Info</h2>
               <h4 class="card-text">Seyed Ali Ghasemi</h4>
               <p class="card-text"></p>
                 <div class="text-center"><div class="btn-group" role="group">
                       <a class="btn btn-lg btn-primary" href="mailto:info@gha3mi.com"><i class="fa fa-envelope fa-lg"></i></a>
-                      <a class="btn btn-lg btn-primary" href="https://github.com/gha3mi"><i class="fa fa-github fa-lg"></i></a>
+                    
+                    <a class="btn btn-lg btn-primary" href="https://github.com/gha3mi"><i class="fa fa-github fa-lg"></i></a>
+                    
+                    
+                    
+                    
+                    
+                    
                 </div></div>
             </div>
           </div>
@@ -161,7 +192,7 @@ If you find any issues or would like to suggest improvements, please open an iss
           <div class="col-xs-6 col-sm-4">
             <div>
               <h3>Source Files</h3>
-              <ul><li><a href='sourcefile/external_interfaces.f90.html'>external_interfaces.f90</a></li><li><a href='sourcefile/fordot.f90.html'>fordot.f90</a></li><li><a href='sourcefile/fordot_options.f90.html'>fordot_options.f90</a></li></ul>
+              <ul><li><a href='sourcefile/external_interfaces.f90.html'>external_interfaces.f90</a></li><li><a href='sourcefile/fordot.f90.html'>fordot.f90</a></li><li><a href='sourcefile/fordot_options.f90.html'>fordot_options.f90</a></li><li><a href='sourcefile/test1.f90.html'>test1.f90</a></li><li><a href='sourcefile/test2.f90.html'>test2.f90</a></li></ul>
             </div>
             <div>
               <ul>
@@ -197,40 +228,21 @@ If you find any issues or would like to suggest improvements, please open an iss
     <footer>
       <div class="container">
         <div class="row justify-content-between">
-          <div class="col"><p>ForDot was developed by Seyed Ali Ghasemi<br>&copy; 2023 
+          <div class="col">
+            <p>
+              ForDot
+ was developed by Seyed Ali Ghasemi<br>              &copy; 2023-2025 BSD 3-Clause
 </p>
           </div>
           <div class="col">
             <p class="text-end">
               Documentation generated by
               <a href="https://github.com/Fortran-FOSS-Programmers/ford">FORD</a>
- on 2024-02-02T08:11:10.927243             </p>
+ on 2025-07-17T08:23:45.452237+0000             </p>
           </div>
         </div>
         <br>
       </div> <!-- /container -->
     </footer>
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>    
-
-    <!-- MathJax JavaScript
-             ================================================== -->
-             <!-- Placed at the end of the document so the pages load faster -->
-        <script type="text/x-mathjax-config">
-          MathJax.Hub.Config({
-          TeX: { extensions: ['AMSmath.js','AMSsymbols.js','noErrors.js','noUndefined.js'], equationNumbers: { autoNumber: 'AMS' } },
-          jax: ['input/TeX','input/MathML','output/HTML-CSS'],
-          extensions: ['tex2jax.js','mml2jax.js','MathMenu.js','MathZoom.js']
-          });
-        </script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
-
-          <script src="./tipuesearch/tipuesearch_content.js"></script>
-          <script src="./tipuesearch/tipuesearch_set.js"></script>
-          <script src="./tipuesearch/tipuesearch.js"></script>
-
   </body>
 </html>
