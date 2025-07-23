@@ -20,7 +20,7 @@ a = dot_product(u,v,coarray,option,nblock)
 - `nblock` is an optional integer variable.
 - `options` is an optional character variable. Available options are `'m1'` to `'m4'`, and the default option is `'m2'`.
 
-- **Note**: Use the flag `-DUSE_DO_CONCURRENT` to enable do concurrent. This implementation of do concurrent is currently only supported by the Intel Compiler (ifx).
+- **Note**: Use the flag `-DUSE_DO_CONCURRENT` to enable do concurrent.
 
 ## Requirements
 
